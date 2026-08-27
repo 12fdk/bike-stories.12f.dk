@@ -49,11 +49,14 @@ ATOM = {"a": "http://www.w3.org/2005/Atom"}
 # priority list, highest-value first. r/bikewrench is the single best fit — it is
 # nothing but maintenance questions — followed by the e-bike and commuting subs
 # where running costs come up constantly. The general riding subs are the ones we
-# can afford to lose.
+# can afford to lose. r/daddit is last and is a lottery ticket, not a source:
+# it is the only sub here where "what bike for my 5-year-old" is on topic, but
+# measured 2026-08-27 its /top is photographs and it produced nothing. Kid-bike
+# topics come from the rotation rule in prompt.md §1 step 0, not from this tool.
 SUBREDDITS = [
     "bikewrench", "ebikes", "bikecommuting", "MTB", "cycling",
     "bicycling", "Velo", "xbiking", "gravelcycling", "FixedGearBicycle",
-    "bikepacking", "BikeMechanics",
+    "bikepacking", "BikeMechanics", "daddit",
 ]
 WINDOWS = ["month", "year"]
 
@@ -111,6 +114,20 @@ THEMES: dict[str, tuple[str, list[str]]] = {
     "n-plus-one": ("Owning several bikes and keeping on top of them all", [
         "n+1", "how many bikes", "quiver", "second bike", "winter bike",
         "multiple bikes", "stable"]),
+    # Deliberately NOT keyed on "year old": "my 12 year old bike" is a
+    # maintenance post, and the phrase would drag half the drivetrain threads
+    # in here. The wheel sizes stop at 24" for the same reason — 26" is a
+    # grown-up MTB size, 12-24" is a child's.
+    "kids-bikes": ("Choosing, sizing and handing down a kid's bike", [
+        "kids bike", "kid's bike", "kids bikes", "child's bike", "childs bike",
+        "childrens bike", "children's bike", "toddler", "balance bike",
+        "first bike", "first pedal bike", "for my son", "for my daughter",
+        "for my kid", "for my child", "for a kid", "my 4 year", "my 5 year",
+        "my 6 year", "my 7 year", "my 8 year", "my 9 year",
+        "12 inch", "14 inch", "16 inch", "20 inch", "24 inch",
+        "wheel size for", "outgrown", "grow into", "hand me down", "hand-me-down",
+        "training wheels", "stabilisers", "stabilizers", "woom", "islabike",
+        "kids helmet", "learning to ride"]),
     "storage": ("Storage, transport and long lay-ups", [
         "storing", "storage", "over winter", "long term storage", "hanging",
         "bike rack", "transport", "flying with"]),

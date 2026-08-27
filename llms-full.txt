@@ -46,7 +46,7 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 ## Blog
 
-The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs` or `riding`.
+The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
 ### When to replace a bike chain (and what it costs if you don't) (2026-08-27, parts-and-wear)
 https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/

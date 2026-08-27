@@ -36,7 +36,7 @@ BLOG_DIR = ROOT / "blog"
 TEMPLATE = Path(__file__).resolve().parent / "templates" / "post.html"
 
 SITE = "https://bike-stories.12f.dk"
-TAGS = {"maintenance", "parts-and-wear", "costs", "riding"}
+TAGS = {"maintenance", "parts-and-wear", "costs", "riding", "kids"}
 WORDS_PER_MINUTE = 200
 
 MAX_TITLE = 70
@@ -626,7 +626,7 @@ LLMS_FULL_BLOG_INTRO = (
     "\nThe Bike Stories blog publishes practical bicycle maintenance guidance — what wears out "
     "and when, how to keep a service history, and what a bike really costs to run — at "
     "{SITE}/blog/ (RSS feed: {SITE}/feed.xml). Posts are tagged `maintenance`, "
-    "`parts-and-wear`, `costs` or `riding`.\n\n")
+    "`parts-and-wear`, `costs`, `riding` or `kids`.\n\n")
 
 
 def build_llms_region(posts: list[Post]) -> str:

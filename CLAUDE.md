@@ -159,7 +159,10 @@ hand-written files are fenced with `BLOG:*:START` / `BLOG:*:END` markers — lea
 them in place.
 
 Tags (edit `TAGS` in `build.py` to change the set): `maintenance`,
-`parts-and-wear`, `costs`, `riding`.
+`parts-and-wear`, `costs`, `riding`, `kids`. `kids` is load-bearing, not
+decorative: `prompt.md` §1 step 0 counts `tag: kids` posts to keep roughly one
+post in three about children's bikes, so a kid post filed under any other tag
+is invisible to that rotation.
 
 ### The brief lives in `prompt.md`
 

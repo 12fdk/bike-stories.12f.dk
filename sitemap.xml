@@ -43,5 +43,11 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://bike-stories.12f.dk/blog/chain-lube-wet-dry-wax/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- BLOG:URLS:END -->
 </urlset>

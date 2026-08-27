@@ -142,7 +142,7 @@ final report when you use it.
 7. Tyre wear: the signs that mean replace, not "one more ride"
 8. Bottom bracket creak: how to find what's actually creaking
 9. Winter riding: what salt and grit destroy first, and how to slow it down
-10. Chain lube: wet, dry, wax, and which one your conditions actually want
+10. Chain lube: wet, dry, wax, and which one your conditions actually want *(used: 2026-08-27)*
 11. Suspension service intervals, and what happens if you skip them
 12. How to keep a service history that's worth money when you sell
 13. Buying a used bike: the ten-minute inspection that avoids the bad ones

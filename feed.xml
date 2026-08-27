@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bike Stories Blog</title>
+    <link>https://bike-stories.12f.dk/blog/</link>
+    <description>Practical bike maintenance, what wears out when, and what a bike really costs — from the team behind Bike Stories.</description>
+    <language>en</language>
+    <atom:link href="https://bike-stories.12f.dk/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 27 Aug 2026 08:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>When to replace a bike chain (and what it costs if you don't)</title>
+      <link>https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/</link>
+      <guid isPermaLink="true">https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/</guid>
+      <pubDate>Thu, 27 Aug 2026 08:00:00 +0000</pubDate>
+      <category>parts-and-wear</category>
+      <description>How chain wear actually works, how to measure it with a ruler or a gauge, and the distance figures worth planning around before it takes the cassette with it.</description>
+    </item>
+
+  </channel>
+</rss>

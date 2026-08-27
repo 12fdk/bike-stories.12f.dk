@@ -1,0 +1,43 @@
+<!-- Source for images/og-image.jpg (1200x630).
+     Regenerate:  python3 -m http.server 8000
+                  chrome --headless --window-size=1200,630 \
+                    --screenshot=shot.png http://localhost:8000/tools/og-image.html
+                  magick shot.png -strip -quality 88 images/og-image.jpg -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;overflow:hidden;
+ font-family:-apple-system,'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif;
+ background:linear-gradient(160deg,#095B89 0%,#00436B 58%,#002E4C 100%);
+ color:#fff;display:flex;align-items:flex-start;gap:44px;padding:64px 64px 0;position:relative}
+body::before{content:'';position:absolute;inset:0;
+ background:radial-gradient(52% 62% at 88% 10%,rgba(0,124,195,.55) 0%,transparent 70%),
+            radial-gradient(44% 54% at 4% 96%,rgba(255,255,255,.14) 0%,transparent 70%)}
+.copy{position:relative;flex:1;min-width:0;padding-top:10px}
+.brandline{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.brandline img{width:58px;height:58px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.brandline span{font-size:29px;font-weight:800;letter-spacing:-.02em}
+h1{font-size:56px;line-height:1.06;font-weight:800;letter-spacing:-.035em}
+h1 em{font-style:normal;border-bottom:5px solid #2A9FD6;padding-bottom:2px}
+p{margin-top:20px;font-size:24px;line-height:1.4;color:rgba(255,255,255,.84);max-width:21ch}
+.stats{display:flex;gap:1px;margin-top:30px;background:rgba(255,255,255,.22);
+ border:1px solid rgba(255,255,255,.22);border-radius:12px;overflow:hidden;max-width:520px}
+.cell{background:rgba(3,44,71,.82);padding:13px 18px;flex:1}
+.k{font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+.v{font-size:29px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:2px}
+.v small{font-size:15px;font-weight:600;color:rgba(255,255,255,.6);margin-left:4px}
+.shot{position:relative;flex:0 0 auto;background:#0B0C10;border-radius:42px;padding:9px;
+ box-shadow:0 0 0 2px #26282F,0 24px 64px rgba(0,0,0,.45);transform:rotate(2.5deg);margin-top:6px}
+.shot img{display:block;width:286px;border-radius:34px}
+</style></head><body>
+<div class="copy">
+ <div class="brandline"><img src="../images/icon.png"><span>Bike Stories</span></div>
+ <h1>Every part, every service, <em>every kilometre</em>.</h1>
+ <p>The maintenance log for everyone who loves their bikes.</p>
+ <div class="stats">
+  <div class="cell"><div class="k">Total distance</div><div class="v">4,225<small>mi</small></div></div>
+  <div class="cell"><div class="k">Cost / mi</div><div class="v">1.11<small>$</small></div></div>
+  <div class="cell"><div class="k">Next service</div><div class="v">45<small>days</small></div></div>
+ </div>
+</div>
+<div class="shot"><img src="../images/screenshots/en-US/02-CostOfOwnership.webp"></div>
+</body></html>

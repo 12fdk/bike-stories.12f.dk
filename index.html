@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Stories — Bike Maintenance Log &amp; Cost Tracker | iPhone App</title>
+  <meta name="description" content="Track bike maintenance, parts, mileage and the true cost of every bike you own. Service reminders, Apple Health rides, wear tracking. Free on iPhone, no account.">
+  <meta name="keywords" content="bike maintenance log, bicycle service tracker, bike cost tracker, chain wear tracker, cycling logbook app, bike odometer app, mtb maintenance, e-bike battery health, bike parts tracker, gpx ride log">
+  <meta name="author" content="12F ApS">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0B0E" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- iOS Safari native install banner straight to the App Store -->
+  <meta name="apple-itunes-app" content="app-id=6783374730">
+
+  <link rel="canonical" href="https://bike-stories.12f.dk/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bike Stories — the logbook for everyone who loves their bikes.">
+  <meta property="og:description" content="Maintenance, parts, mileage and the true cost of every bike you own — in one private app. Service reminders, wear tracking, Apple Health rides. Free on iPhone.">
+  <meta property="og:image" content="https://bike-stories.12f.dk/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bike Stories — bike maintenance log and cost tracker for iPhone">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bike-stories.12f.dk/">
+  <meta property="og:site_name" content="Bike Stories">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bike Stories — the logbook for everyone who loves their bikes.">
+  <meta name="twitter:description" content="Maintenance, parts, mileage and the true cost of every bike you own. Free on iPhone, no account, nothing sold.">
+  <meta name="twitter:image" content="https://bike-stories.12f.dk/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Bike Stories — bike maintenance log and cost tracker for iPhone">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="alternate" type="application/rss+xml" title="Bike Stories Blog" href="/feed.xml">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Structured Data: WebPage with SpeakableSpecification.
+       Points voice assistants at the definition block and the FAQ — the two
+       parts of this page written to be read aloud. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Bike Stories — Bike Maintenance Log & Cost Tracker",
+    "url": "https://bike-stories.12f.dk/",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".answer-lede", ".answer-item", ".faq-answer"]
+    }
+  }
+  </script>
+
+  <!-- Structured Data: SoftwareApplication.
+       No aggregateRating — the app has no public ratings yet, and inventing one
+       is both a lie and a Google structured-data violation. Add it when real
+       ratings exist. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bike Stories: Maintenance Log",
+    "operatingSystem": "iOS 17.0 or later",
+    "applicationCategory": "HealthApplication",
+    "description": "A private logbook for every bike you own: maintenance schedules and reminders, parts and their wear, rides imported from Apple Health or GPX, documents with renewal reminders, and the true cost of ownership with cost per kilometre.",
+    "url": "https://bike-stories.12f.dk/",
+    "image": "https://bike-stories.12f.dk/images/icon.png",
+    "downloadUrl": "https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730",
+    "softwareVersion": "1.2",
+    "inLanguage": "en",
+    "screenshot": [
+      "https://bike-stories.12f.dk/images/screenshots/en-US/01-Garage.webp",
+      "https://bike-stories.12f.dk/images/screenshots/en-US/02-CostOfOwnership.webp",
+      "https://bike-stories.12f.dk/images/screenshots/en-US/03-Maintenance.webp",
+      "https://bike-stories.12f.dk/images/screenshots/en-US/05-Parts.webp"
+    ],
+    "featureList": [
+      "Total cost of ownership per bike, with cost per kilometre or mile",
+      "Maintenance schedules by date or distance, with reminders",
+      "Full service history with costs",
+      "Parts and components with wear tracking",
+      "Rides logged by hand, imported from Apple Health, or loaded from a GPX file",
+      "Route maps for recorded rides",
+      "Documents: manuals, receipts, warranties and insurance, with renewal reminders",
+      "Photo gallery per bike and per ride",
+      "Insights: distance and spending charts over time",
+      "E-bike battery health checks",
+      "Tyre pressure log and a reference setup sheet",
+      "Spares and stock inventory",
+      "Home-screen widget and a share extension",
+      "iCloud sync across your devices",
+      "Kilometres or miles, and your own currency",
+      "Available in 49 languages"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "12F ApS",
+      "url": "https://12f.dk/"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Bike Stories",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Free download. Track up to two bikes with every logging feature."
+      },
+      {
+        "@type": "Offer",
+        "name": "Bike Stories Pro",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "One-time in-app unlock: unlimited bikes, Apple Health ride import, PDF export and automatic backups."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "12F ApS",
+  "url": "https://12f.dk/",
+  "logo": "https://bike-stories.12f.dk/images/icon.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "DK"
+  },
+  "sameAs": [
+    "https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Robert Jensen",
+    "url": "https://bike-stories.12f.dk/about.html"
+  }
+}
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Bike Stories free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app is free to download and free to use for up to two bikes, with every logging feature included: maintenance, parts, rides, costs, documents and photos. Bike Stories Pro is a one-time 9.99 USD in-app unlock that removes the bike limit and adds Apple Health ride import, PDF export and automatic backups. There is no subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no sign-up, no email and no Bike Stories server holding your data. Your bikes live on your iPhone and sync between your own devices through your iCloud account, which only you can read."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it import my rides automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bike Stories reads cycling workouts from Apple Health, so anything that writes there — your watch, Strava, Wahoo, Garmin Connect and the rest, when you let them — can become a ride on the right bike. Turn on automatic sync and new workouts are picked up when you open the app. You can also load a GPX file and see the route on a map, or log a ride by hand in a few seconds. Health import is part of Pro; manual rides and GPX are free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work for e-bikes and mountain bikes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — there are 13 bike types, from road and gravel to mountain, city, cargo, folding and electric, and each starter template comes with a maintenance schedule that suits it. E-bikes also get battery health checks: measured capacity, estimated range and charge cycles over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does it know when a service is due?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You schedule a service by date, by distance, or both — every 500 km, or every six months, whichever comes first. The bike's odometer builds itself from the rides you log, so a distance-based service becomes due as you ride. Turn on reminders and you get a notification when something falls due, rather than finding out on a climb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It stays yours. Bikes, rides, receipts and photos are stored on your device and mirrored to your own iCloud account — nothing is uploaded to us and nothing is sold. The app does send anonymous, non-identifying usage analytics so we can see which screens people get stuck on; no bike data is ever included, and you can switch it off in Settings. The details are in the privacy policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get my data out again?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pro exports a bike's service and cost history as a PDF, plus a seller document for when you sell the bike — a full, dated history is worth real money at resale. Pro also keeps automatic local backups you can restore from."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to run it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An iPhone running iOS 17 or later. Nothing else: no account, no subscription and no internet connection to read your own logbook. Distances show in kilometres or miles and costs in your own currency, and the app is available in 49 languages."
+      }
+    }
+  ]
+}
+  </script>
+
+  <!-- Structured Data: HowTo -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to keep a bike maintenance log with Bike Stories",
+  "description": "Set up a bike, log what happens to it, and see what it costs — in three steps.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Add the bike",
+      "text": "Tap the kind of bike you ride and Bike Stories creates it with a maintenance schedule already in place. Add the purchase price and the odometer you are starting from."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Log what happens",
+      "text": "Rides come in from Apple Health, a GPX file or by hand. Add parts as you fit them, services as they are done, and drop receipts and manuals into Documents."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Watch the numbers build",
+      "text": "The dashboard rolls it all up: total distance, total cost, cost per kilometre, what is wearing out and what is due next."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="wrap">
+      <a href="/" class="brand">
+        <img src="/images/icon.png" alt="" width="34" height="34">
+        Bike Stories
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#who-its-for">Who it's for</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li class="nav-cta-mobile">
+            <a class="btn btn--primary btn--sm" data-umami-event="appstore-click" data-umami-event-placement="header-mobile" href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">Get the app</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--sm nav-cta" data-umami-event="appstore-click" data-umami-event-placement="header" href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">Get the app</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>Every part, every service,<br class="br-lg"><span class="rule">every kilometre</span>.</h1>
+            <p class="hero-sub">Bike Stories keeps the whole story of every bike you own — what it cost, what has been done to it, what is wearing out, and what is due next. On your iPhone, with no account and nothing sold.</p>
+            <div class="cta-row">
+              <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="hero" aria-label="Download Bike Stories on the App Store">
+                <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="eager">
+              </a>
+              <a href="#how-it-works" class="btn btn--ghost">See how it works ↓</a>
+            </div>
+            <ul class="hero-trust">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Free to download
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                No account, no subscription
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Syncs with your iCloud
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-stage">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/02-CostOfOwnership.webp" alt="A bike's dashboard in Bike Stories: a photo of the bike, total distance 4,225 miles, and a stat grid showing total cost, cost per mile, parts and next service" width="640" height="1391" loading="eager" fetchpriority="high">
+            </div>
+            <!-- The same cockpit, rebuilt in HTML: the site opens on the app's
+                 own stat grid, in the app's own colours. -->
+            <div class="hero-panel glass" aria-hidden="true">
+              <div class="hero-metric">
+                <span class="stat-label">Total distance</span>
+                <span class="hero-metric-value">4,225<span class="unit">mi</span></span>
+              </div>
+              <div class="statgrid">
+                <div class="stat">
+                  <span class="stat-label">Total cost</span>
+                  <span class="stat-value">4,704<span class="unit">$</span></span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Cost / mi</span>
+                  <span class="stat-value">1.11<span class="unit">$</span></span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Parts</span>
+                  <span class="stat-value">5</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Next service</span>
+                  <span class="stat-value">45<span class="unit">days</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof strip -->
+    <section class="strip" aria-label="At a glance">
+      <div class="wrap">
+        <ul>
+          <li><span class="strip-num">13</span><span class="strip-label">bike types, each with its own service schedule</span></li>
+          <li><span class="strip-num">7</span><span class="strip-label">things every bike remembers, from parts to receipts</span></li>
+          <li><span class="strip-num">49</span><span class="strip-label">languages</span></li>
+          <li><span class="strip-num">0</span><span class="strip-label">accounts, ads or subscriptions</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Direct answer: the definition an answer engine can lift -->
+    <section class="section" id="what-it-is">
+      <div class="wrap">
+        <div class="answer-block fade-in">
+          <h2>What is Bike Stories?</h2>
+          <p class="answer-lede"><strong>Bike Stories is an iPhone app that keeps a maintenance log for every bike you own, and works out what each one actually costs you.</strong> It tracks services and when the next one is due, parts and how worn they are, rides from Apple Health or a GPX file, receipts, manuals and warranties — then rolls it all into total cost of ownership and cost per kilometre. It is free to download, needs no account, and your data stays in your own iCloud.</p>
+        </div>
+
+        <div class="answer-grid">
+          <div class="answer-item fade-in">
+            <h3>How do I keep a bike maintenance log?</h3>
+            <p>Add the bike, and Bike Stories starts a service history for it. Log each service with its date, cost and what was done; schedule the next one by date or by distance. The history stays with the bike — searchable years later, and worth money when you sell it.</p>
+          </div>
+          <div class="answer-item fade-in">
+            <h3>How much does my bike cost per kilometre?</h3>
+            <p>Purchase price, parts and services roll into one total, divided by the distance you have actually ridden. Bike Stories shows both numbers on the bike's dashboard, so an expensive bike you ride every day can turn out cheaper than a cheap one in the shed.</p>
+          </div>
+          <div class="answer-item fade-in">
+            <h3>How do I know when to replace a chain?</h3>
+            <p>Give the part an expected life when you fit it. Bike Stories counts the distance ridden since and shows the wear as a bar — green while there is life left, amber when it is nearly gone — so a worn chain gets replaced before it takes the cassette with it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--grouped" id="features">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">Features</span>
+          <h2>A logbook that does the <span class="mark">arithmetic for you</span></h2>
+          <p class="lede">A notebook in the shed can hold a service history. It can't tell you what the bike costs per kilometre, or that the chain is at 43% and due before the sportive.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature glass fade-in">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>The true cost of ownership</h3>
+            <p>Purchase, parts and every service roll up into one number per bike — and into cost per kilometre, the figure that settles arguments about whether the nice bike was worth it.</p>
+          </article>
+
+          <article class="feature glass fade-in">
+            <div class="feature-icon feature-icon--caution">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M12 13v3l2 1"/></svg>
+            </div>
+            <h3>Services scheduled by date or distance</h3>
+            <p>Every 500 km, or every six months, or whichever comes first. The odometer builds itself from your rides, so a distance-based service falls due as you ride — and a reminder tells you before the noise starts.</p>
+          </article>
+
+          <article class="feature glass fade-in">
+            <div class="feature-icon feature-icon--ok">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 8h5l3.5 9.5"/><path d="M9.5 8h5.5"/></svg>
+            </div>
+            <h3>Parts, and how much life is left</h3>
+            <p>Chain, tyres, brake pads, battery, bars — 13 categories, each with what it cost and what it is fitted to. Give a part an expected life and its wear shows as a bar you can read in a second.</p>
+          </article>
+
+          <article class="feature glass fade-in">
+            <div class="feature-icon feature-icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 6.6a4.6 4.6 0 0 0-6.5 0L12 8.9l-2.3-2.3a4.6 4.6 0 1 0-6.5 6.5l8.8 8.7 8.8-8.7a4.6 4.6 0 0 0 0-6.5Z"/></svg>
+            </div>
+            <h3>Rides that log themselves</h3>
+            <p>Cycling workouts come in from Apple Health — your watch, or whatever app writes there. Or drop in a GPX file and see the route on a map. Or type a ride in ten seconds. Whichever you choose, the odometer keeps up.</p>
+          </article>
+
+          <article class="feature glass fade-in">
+            <div class="feature-icon feature-icon--violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
+            <h3>Manuals, receipts and warranties</h3>
+            <p>Keep the paperwork with the bike instead of in a drawer. Insurance and registration get a renewal date, and a reminder before it lapses.</p>
+          </article>
+
+          <article class="feature glass fade-in">
+            <div class="feature-icon feature-icon--overdue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            </div>
+            <h3>Insights worth looking at</h3>
+            <p>Distance per month, riding by weekday, spending over time, and where the money actually went — purchase, parts, service or the small stuff that adds up.</p>
+          </article>
+        </div>
+
+        <ul class="more-features fade-in">
+          <li><span class="emoji" aria-hidden="true">🔋</span><span><strong>E-bike battery health</strong> — capacity, range and charge cycles over time</span></li>
+          <li><span class="emoji" aria-hidden="true">🌡️</span><span><strong>Tyre pressure log</strong> — front and rear, charted, with your reference setup</span></li>
+          <li><span class="emoji" aria-hidden="true">📦</span><span><strong>Spares &amp; stock</strong> — what's on the shelf, deducted when you fit it</span></li>
+          <li><span class="emoji" aria-hidden="true">📱</span><span><strong>Home-screen widget</strong> — odometer, this month and next service at a glance</span></li>
+          <li><span class="emoji" aria-hidden="true">📸</span><span><strong>Photos</strong> — a gallery per bike and per ride, plus a share sheet to file them</span></li>
+          <li><span class="emoji" aria-hidden="true">☁️</span><span><strong>iCloud sync</strong> — your devices, your account, no server of ours</span></li>
+          <li><span class="emoji" aria-hidden="true">🌍</span><span><strong>km or miles</strong> — and your own currency, in 49 languages</span></li>
+          <li><span class="emoji" aria-hidden="true">🧾</span><span><strong>Sell it with receipts</strong> — export the history as a PDF for the buyer</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps, and the first one is <span class="mark">a single tap</span></h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/01-Garage.webp" alt="The Garage screen listing three bikes, each with a twelve-week activity chart and its odometer, distance this month and next service" width="640" height="1391" loading="lazy">
+            </div>
+            <p class="step-badge"><span>1</span> Add the bike</p>
+            <h3>Tap the kind of bike you ride</h3>
+            <p>Road, gravel, mountain, city, cargo, electric — pick one and the bike arrives with a maintenance schedule that already suits it. Add the price you paid and the odometer you're starting from.</p>
+          </li>
+
+          <li class="step fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/04-Rides.webp" alt="A list of logged rides, each with its date, distance and average speed, and a running total at the top" width="640" height="1391" loading="lazy">
+            </div>
+            <p class="step-badge"><span>2</span> Log what happens</p>
+            <h3>Rides, parts, services, paperwork</h3>
+            <p>Let Apple Health bring the rides in, or add them yourself. Log a part when you fit it and a service when it's done, and drop the receipt straight in from another app.</p>
+          </li>
+
+          <li class="step fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/07-Insights.webp" alt="The Insights screen: distance, rides, average and longest ride, total spend and cost per mile, above charts of distance per month and riding by weekday" width="640" height="1391" loading="lazy">
+            </div>
+            <p class="step-badge"><span>3</span> Read the numbers</p>
+            <h3>The bike explains itself</h3>
+            <p>Total distance, total cost, cost per kilometre, what's wearing out and what's due next — for one bike or the whole garage.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Cost of ownership -->
+    <section class="section section--grouped" id="cost">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-copy fade-in">
+            <span class="eyebrow">Cost of ownership</span>
+            <h2>What did that bike <span class="mark">actually cost you?</span></h2>
+            <p class="lede">Not the price on the receipt. The price plus four years of chains, tyres, brake pads, services and the two saddles you didn't get on with.</p>
+            <ul class="split-list">
+              <li>
+                <span class="bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                <span><strong>One total, four sources</strong><span class="txt">Purchase, parts, maintenance and expenses, each its own colour in the breakdown — so you can see which one is really eating the money.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+                <span><strong>Cost per kilometre</strong><span class="txt">The number that reframes everything. Ride the expensive bike daily and it quietly becomes the cheap one.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+                <span><strong>Worth money at resale</strong><span class="txt">A dated history of every service and part is the difference between "well looked after, honest" and a stranger's word for it.</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The app's cost breakdown, rebuilt in HTML in its own fixed hues -->
+          <div class="split-demo fade-in">
+            <p class="split-demo-title">Cost breakdown · Cube Town Hybrid</p>
+            <div class="hero-metric" style="border:0;padding:0;">
+              <span class="stat-label">Total cost</span>
+              <span class="hero-metric-value">4,704<span class="unit">$</span></span>
+            </div>
+            <div>
+              <div class="costbar" role="img" aria-label="Cost breakdown: purchase 3,900 dollars, parts 420 dollars, maintenance 304 dollars, expenses 80 dollars">
+                <span class="seg-purchase" style="width:82.9%"></span>
+                <span class="seg-parts" style="width:8.9%"></span>
+                <span class="seg-service" style="width:6.5%"></span>
+                <span class="seg-expenses" style="width:1.7%"></span>
+              </div>
+              <ul class="cost-legend">
+                <li><span class="swatch seg-purchase"></span>Purchase<span class="amount">$3,900</span></li>
+                <li><span class="swatch seg-parts"></span>Parts<span class="amount">$420</span></li>
+                <li><span class="swatch seg-service"></span>Maintenance<span class="amount">$304</span></li>
+                <li><span class="swatch seg-expenses"></span>Expenses<span class="amount">$80</span></li>
+              </ul>
+            </div>
+            <div class="statgrid">
+              <div class="stat">
+                <span class="stat-label">Cost / mi</span>
+                <span class="stat-value">1.11<span class="unit">$</span></span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Distance</span>
+                <span class="stat-value">4,225<span class="unit">mi</span></span>
+              </div>
+            </div>
+            <p class="demo-foot">Every segment is always labelled with its amount — colour never carries the meaning on its own.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maintenance -->
+    <section class="section" id="maintenance">
+      <div class="wrap">
+        <div class="split split--reverse">
+          <div class="split-copy fade-in">
+            <span class="eyebrow">Maintenance</span>
+            <h2>Nothing is due <span class="mark">"sometime soon"</span></h2>
+            <p class="lede">A service is either done, coming up, or overdue — and Bike Stories says which, in words and in colour, for every bike in the garage.</p>
+            <ul class="split-list">
+              <li>
+                <span class="bullet bullet--ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>A full service history</strong><span class="txt">What was done, when, what it cost and who did it — including the jobs you did yourself on a Sunday.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--caution" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+                <span><strong>Due by date, by distance, or both</strong><span class="txt">Ten pre-set service types — brake service, chain replacement, gear tuning, suspension service and the rest — or write your own.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--overdue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                <span><strong>Overdue is loud</strong><span class="txt">Two services past due on the winter bike shows on the Garage screen, in red, before you get on it.</span></span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 14.5 18 8.5Z"/><path d="M13.7 20a2 2 0 0 1-3.4 0"/></svg></span>
+                <span><strong>Reminders, if you want them</strong><span class="txt">A notification when a service falls due, and another before an insurance policy or registration lapses.</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="split-shots split-shots--single fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/03-Maintenance.webp" alt="The Maintenance screen with an upcoming brake check due in August in amber, and a history of an annual service and a first service with their costs" width="640" height="1391" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parts & wear -->
+    <section class="section section--grouped" id="parts">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-copy fade-in">
+            <span class="eyebrow">Parts &amp; wear</span>
+            <h2>Catch the chain <span class="mark">before it eats the cassette</span></h2>
+            <p class="lede">Consumables don't fail on a date. They fail after a distance — and that distance is exactly what a logbook knows and you don't.</p>
+            <ul class="split-list">
+              <li>
+                <span class="bullet bullet--teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="3.4"/></svg></span>
+                <span><strong>13 part categories</strong><span class="txt">Tyres, drivetrain, brakes, wheels, suspension, cockpit, saddle, pedals, electronics, accessories — with brand, model and price.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17.5h18"/><path d="M6 17.5V12M12 17.5V7M18 17.5v-3"/></svg></span>
+                <span><strong>Wear you can read at a glance</strong><span class="txt">Give a part its expected life and the bar fills as you ride. Green while there's life left, amber when there isn't much.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--violet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg></span>
+                <span><strong>Spares on the shelf</strong><span class="txt">Track what you keep in stock and deduct it automatically the day you fit it.</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The Parts screen's wear rows, rebuilt in HTML -->
+          <div class="split-demo fade-in">
+            <p class="split-demo-title">Parts · life remaining</p>
+            <div class="demo-rows">
+              <div class="wear wear--caution">
+                <div class="wear-head"><strong>Tyres</strong><span class="pct">18%</span></div>
+                <div class="wear-track"><span class="wear-fill" style="width:18%"></span></div>
+                <p class="wear-sub">Schwalbe Marathon Plus (pair) · $90 · fitted 2,140 mi ago</p>
+              </div>
+              <div class="wear wear--ok">
+                <div class="wear-head"><strong>Chain</strong><span class="pct">43%</span></div>
+                <div class="wear-track"><span class="wear-fill" style="width:43%"></span></div>
+                <p class="wear-sub">Shimano Deore · $45 · fitted 980 mi ago</p>
+              </div>
+              <div class="wear wear--overdue">
+                <div class="wear-head"><strong>Brake pads (rear)</strong><span class="pct">4%</span></div>
+                <div class="wear-track"><span class="wear-fill" style="width:4%"></span></div>
+                <p class="wear-sub">Replace before the next wet ride</p>
+              </div>
+            </div>
+            <p class="demo-foot">A percentage sits beside every bar. Colour is a second signal, never the only one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rides -->
+    <section class="section" id="rides">
+      <div class="wrap">
+        <div class="split split--reverse">
+          <div class="split-copy fade-in">
+            <span class="eyebrow">Rides</span>
+            <h2>The odometer <span class="mark">that fills itself in</span></h2>
+            <p class="lede">A maintenance log is only as good as its mileage. So Bike Stories takes the mileage from wherever you already record it.</p>
+            <ul class="split-list">
+              <li>
+                <span class="bullet bullet--teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a4.6 4.6 0 0 0-6.5 0L12 8.9l-2.3-2.3a4.6 4.6 0 1 0-6.5 6.5l8.8 8.7 8.8-8.7a4.6 4.6 0 0 0 0-6.5Z"/></svg></span>
+                <span><strong>Apple Health, automatically</strong><span class="txt">Switch it on once and new cycling workouts become rides on the bike you chose, next time you open the app. <em>Pro.</em></span></span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20 3 17.5v-13L9 7m0 13 6-2.5M9 20V7m6 10.5L21 20V7l-6 2.5m0 8V9.5M9 7l6 2.5"/></svg></span>
+                <span><strong>GPX routes on a map</strong><span class="txt">Load a recorded route and the ride carries its map with it. Free, like logging a ride by hand.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+                <span><strong>Filed against the right bike</strong><span class="txt">Put a ride on the wrong one and you can move it — from the list, from the ride, or while editing it.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--violet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 20v-6M12 20V8M17 20v-9"/></svg></span>
+                <span><strong>Twelve weeks at a glance</strong><span class="txt">Each bike's card carries an activity chart, so a bike that hasn't moved since March is obvious from the Garage screen.</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="split-shots fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/04-Rides.webp" alt="The Rides list showing commutes, errands and school runs with distances and average speeds, and 485 miles in total" width="640" height="1391" loading="lazy">
+            </div>
+            <div class="phone">
+              <img src="/images/screenshots/en-US/05-Parts.webp" alt="The Parts screen grouped by category, showing tyres at 18 percent life in amber and a chain at 43 percent in green" width="640" height="1391" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare -->
+    <section class="section section--sunk" id="compare">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">Why bother logging it?</span>
+          <h2>The notebook in the shed vs. <span class="rule">Bike Stories</span></h2>
+        </div>
+
+        <div class="vs-wrap fade-in">
+          <table class="vs">
+            <caption class="visually-hidden">Keeping bike records on paper, compared with using Bike Stories</caption>
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Notebook, receipts, memory</th>
+                <th scope="col" class="col-us">With Bike Stories</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">When was the chain last replaced?</th>
+                <td data-col="Notebook">"Spring? Maybe last spring."</td>
+                <td data-col="With Bike Stories" class="col-us">980 mi ago, $45, Shimano Deore</td>
+              </tr>
+              <tr>
+                <th scope="row">Is anything due?</th>
+                <td data-col="Notebook">You find out on the climb</td>
+                <td data-col="With Bike Stories" class="col-us">A reminder, by date or distance</td>
+              </tr>
+              <tr>
+                <th scope="row">What has this bike cost me?</th>
+                <td data-col="Notebook">A number you'd rather not add up</td>
+                <td data-col="With Bike Stories" class="col-us">Total, and cost per kilometre</td>
+              </tr>
+              <tr>
+                <th scope="row">Where's the receipt?</th>
+                <td data-col="Notebook">A drawer, or gone</td>
+                <td data-col="With Bike Stories" class="col-us">Attached to the bike, with the warranty</td>
+              </tr>
+              <tr>
+                <th scope="row">How much is it worth now?</th>
+                <td data-col="Notebook">"Well looked after — trust me"</td>
+                <td data-col="With Bike Stories" class="col-us">A dated history you can hand over as a PDF</td>
+              </tr>
+              <tr>
+                <th scope="row">Three bikes in the family</th>
+                <td data-col="Notebook">Three notebooks nobody keeps</td>
+                <td data-col="With Bike Stories" class="col-us">One garage, each bike with its own story</td>
+              </tr>
+              <tr>
+                <th scope="row">What it costs you</th>
+                <td data-col="Notebook">A cassette you didn't need to buy</td>
+                <td data-col="With Bike Stories" class="col-us">Nothing, unless you go Pro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="section" id="who-its-for">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">Who it's for</span>
+          <h2>For anyone who has ever thought <span class="mark">"when did I last do that?"</span></h2>
+          <p class="lede">One bike or six, a workshop stand or a shop appointment — the question is always the same one.</p>
+        </div>
+
+        <div class="persona-grid">
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">🚲</div>
+            <h3>The daily commuter</h3>
+            <p>Rain, salt, potholes, 200 days a year. Things wear out on a schedule, and the schedule is measured in kilometres — which is exactly what the app is counting while you ride.</p>
+            <span class="persona-tag">Commuting</span>
+          </article>
+
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">🔧</div>
+            <h3>The home mechanic</h3>
+            <p>You do your own bleeds and bearings, and you know a chain has a number on it. This is where that number lives — and where last year's torque settings and pressures are written down.</p>
+            <span class="persona-tag">Wrenching</span>
+          </article>
+
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">⚡️</div>
+            <h3>The e-bike owner</h3>
+            <p>An expensive bike with a battery that quietly ages. Log capacity, range and cycles over time, and see whether it is really fading or you just remember summer differently.</p>
+            <span class="persona-tag">E-bikes</span>
+          </article>
+
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">🏔️</div>
+            <h3>The one with N+1 bikes</h3>
+            <p>Road, gravel, hardtail, the winter hack and the one you're restoring. Each gets its own history, its own costs and its own service schedule, in one garage.</p>
+            <span class="persona-tag">Collectors</span>
+          </article>
+
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">👨‍👩‍👧</div>
+            <h3>The family fleet manager</h3>
+            <p>Two adult bikes, two kids' bikes that get outgrown, and one trailer. Nobody else is going to remember when the kids' brakes were last checked.</p>
+            <span class="persona-tag">Families</span>
+          </article>
+
+          <article class="persona fade-in">
+            <div class="persona-avatar" aria-hidden="true">🧾</div>
+            <h3>The one about to sell</h3>
+            <p>A complete, dated service history changes the conversation — and the price. Export it as a PDF and hand it over with the bike.</p>
+            <span class="persona-tag">Resale</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section--grouped" id="pricing">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">Pricing</span>
+          <h2>Free for two bikes. <span class="mark">$9.99 once</span> for the rest.</h2>
+          <p class="lede">No subscription, nothing to cancel, and no feature you rely on gets taken away later. Buy Pro when the garage outgrows the free tier — not before.</p>
+        </div>
+
+        <div class="plans fade-in">
+          <div class="plan">
+            <p class="plan-name">Free</p>
+            <p class="plan-price">$0</p>
+            <p class="plan-note">Every logging feature, for up to two bikes.</p>
+            <ul>
+              <li><span class="tick" aria-hidden="true">✓</span> Two bikes, with full histories</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Maintenance schedules, service history and reminders</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Parts, wear tracking and spares</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Rides by hand or from a GPX file, with route maps</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Costs, insights, documents and photos</li>
+              <li><span class="tick" aria-hidden="true">✓</span> iCloud sync, widget and share extension</li>
+            </ul>
+            <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="pricing-free" aria-label="Download Bike Stories on the App Store">
+              <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+            </a>
+          </div>
+
+          <div class="plan plan--premium">
+            <span class="plan-flag">One-time unlock</span>
+            <p class="plan-name">Bike Stories Pro</p>
+            <p class="plan-price">$9.99</p>
+            <p class="plan-note">Bought once, inside the app. Not a subscription.</p>
+            <ul>
+              <li><span class="tick" aria-hidden="true">✓</span> Unlimited bikes</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Apple Health ride import, including automatic sync</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Export service &amp; resale history as PDF</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Automatic daily backups you can restore from</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Everything in Free, on every bike</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Family Sharing, and it follows your Apple Account</li>
+            </ul>
+            <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="pricing-pro" aria-label="Download Bike Stories on the App Store">
+              <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <p class="plan-footnote fade-in">Prices are set per App Store region and shown in your local currency at checkout.</p>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section" id="privacy">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-copy fade-in">
+            <span class="eyebrow">Your data</span>
+            <h2>Your garage is <span class="mark">nobody else's business</span></h2>
+            <p class="lede">There is no Bike Stories account, because there is no Bike Stories server holding your bikes. What you log is on your iPhone and in your own iCloud.</p>
+            <ul class="split-list">
+              <li>
+                <span class="bullet bullet--ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-9.5V5.6L12 2.5 4 5.6v6.9C4 18.5 12 22 12 22Z"/><polyline points="9 12 11 14 15 9.5"/></svg></span>
+                <span><strong>No account, no sign-up</strong><span class="txt">Open the app and start. Nothing to verify, nothing to remember, nothing to leak.</span></span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H7a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 17.7 9.2a4.9 4.9 0 0 1-.2 9.8Z"/></svg></span>
+                <span><strong>Sync through your own iCloud</strong><span class="txt">iPhone to iPad and back, under your Apple Account. We never see it.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--caution" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+                <span><strong>Analytics you can switch off</strong><span class="txt">Anonymous, non-identifying usage data helps us find the screens people get stuck on. No bike data is ever sent, and there is a toggle in Settings.</span></span>
+              </li>
+              <li>
+                <span class="bullet bullet--violet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <span><strong>Nothing sold, ever</strong><span class="txt">No ads, no data brokers, no shop paying to appear in your service history. The only thing for sale here is Pro. <a href="/privacy-policy.html">Read the privacy policy</a>.</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="split-shots split-shots--single fade-in">
+            <div class="phone">
+              <img src="/images/screenshots/en-US/09-Privacy.webp" alt="The Settings screen showing distance unit and currency, maintenance reminders, and a Share anonymous analytics toggle with a note that no bike data is ever sent" width="640" height="1391" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog teaser -->
+    <section class="section section--grouped" id="blog">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">From the blog</span>
+          <h2>Practical maintenance, <span class="rule">written down properly</span></h2>
+          <p class="lede">Short, useful reads on keeping a bike running: what wears out when, what a service is worth, and how to know before something breaks.</p>
+        </div>
+
+        <div class="post-grid">
+          <!-- BLOG:TEASER:START — generated by tools/build.py, do not hand-edit -->
+          <article class="post-card fade-in">
+            <div class="post-card-media">
+              <img src="/images/blog/when-to-replace-a-bike-chain.png" alt="" width="1200" height="630" loading="lazy">
+            </div>
+            <div class="post-card-body">
+              <p class="post-meta"><span class="tag">parts-and-wear</span><time datetime="2026-08-27">27 Aug 2026</time><span class="dot" aria-hidden="true"></span>6 min read</p>
+              <h3 class="post-card-title"><a href="/blog/when-to-replace-a-bike-chain/">When to replace a bike chain (and what it costs if you don't)</a></h3>
+              <p class="post-card-excerpt">A chain is the cheapest part on your bike and the one that costs the most when you ignore it. Here is how to know when yours is done.</p>
+              <span class="post-card-more">Read it →</span>
+            </div>
+          </article>
+          <!-- BLOG:TEASER:END -->
+        </div>
+
+        <div class="blog-teaser-foot fade-in">
+          <a class="btn btn--ghost" href="/blog/">Read the blog →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head fade-in">
+          <span class="eyebrow">FAQ</span>
+          <h2>Fair questions</h2>
+        </div>
+
+        <div class="faq fade-in">
+          <details class="faq-item">
+            <summary>Is Bike Stories free?</summary>
+            <div class="faq-answer">
+              <p>The app is free to download and free to use for <strong>up to two bikes</strong>, with every logging feature included: maintenance, parts, rides, costs, documents and photos. <strong>Bike Stories Pro</strong> is a one-time $9.99 in-app unlock that removes the bike limit and adds Apple Health ride import, PDF export and automatic backups. There is no subscription.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need an account?</summary>
+            <div class="faq-answer">
+              <p>No. There is no sign-up, no email and no Bike Stories server holding your data. Your bikes live on your iPhone and sync between your own devices through your iCloud account, which only you can read.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can it import my rides automatically?</summary>
+            <div class="faq-answer">
+              <p>Yes. Bike Stories reads cycling workouts from <strong>Apple Health</strong>, so anything that writes there — your watch, Strava, Wahoo, Garmin Connect and the rest, when you let them — can become a ride on the right bike. Turn on automatic sync and new workouts are picked up when you open the app. You can also load a <strong>GPX</strong> file and see the route on a map, or log a ride by hand in a few seconds. Health import is part of Pro; manual rides and GPX are free.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does it work for e-bikes and mountain bikes?</summary>
+            <div class="faq-answer">
+              <p>Yes — there are 13 bike types, from road and gravel to mountain, city, cargo, folding and electric, and each starter template comes with a maintenance schedule that suits it. E-bikes also get <strong>battery health checks</strong>: measured capacity, estimated range and charge cycles, tracked over time.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How does it know when a service is due?</summary>
+            <div class="faq-answer">
+              <p>You schedule a service by date, by distance, or both — every 500 km, or every six months, whichever comes first. The bike's odometer builds itself from the rides you log, so a distance-based service becomes due as you ride. Turn on reminders and you get a notification when something falls due, rather than finding out on a climb.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What happens to my data?</summary>
+            <div class="faq-answer">
+              <p>It stays yours. Bikes, rides, receipts and photos are stored on your device and mirrored to your own iCloud account — nothing is uploaded to us and nothing is sold. The app does send <strong>anonymous, non-identifying usage analytics</strong> so we can see which screens people get stuck on; no bike data is ever included, and you can switch it off in Settings. The details are in the <a href="/privacy-policy.html">privacy policy</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I get my data out again?</summary>
+            <div class="faq-answer">
+              <p>Yes. Pro exports a bike's service and cost history as a <strong>PDF</strong>, plus a seller document for when you sell the bike — a full, dated history is worth real money at resale. Pro also keeps automatic local backups you can restore from.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What do I need to run it?</summary>
+            <div class="faq-answer">
+              <p>An iPhone running <strong>iOS 17 or later</strong>. Nothing else: no account, no subscription and no internet connection to read your own logbook. Distances show in kilometres or miles and costs in your own currency, and the app is available in 49 languages.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section section--grouped">
+      <div class="wrap">
+        <div class="closing-cta fade-in">
+          <h2>Your bike is keeping score whether you write it down or not.</h2>
+          <p>Start today and in a year you'll know exactly what it cost, what's worn out, and what's due next — instead of guessing on the side of a road.</p>
+          <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="closing" aria-label="Download Bike Stories on the App Store">
+            <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+          </a>
+          <p class="requirement">Free download · iPhone, iOS 17 or later · No account · Pro is a one-time $9.99 unlock</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-about">
+          <a href="/" class="brand">
+            <img src="/images/icon.png" alt="" width="34" height="34">
+            Bike Stories
+          </a>
+          <p>The logbook for everyone who loves their bikes: maintenance, parts, mileage and the true cost of every bike you own. No account, nothing sold. Built by 12F ApS in Denmark.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#cost">Cost of ownership</a></li>
+            <li><a href="#maintenance">Maintenance</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a data-umami-event="appstore-click" data-umami-event-placement="footer" href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">App Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>More</h3>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/feed.xml">RSS feed</a></li>
+            <li><a href="/privacy-policy.html">Privacy policy</a></li>
+            <li><a href="https://12f.dk/">Contact &amp; support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 12F ApS. All rights reserved.</span>
+        <span>Requires iOS 17 or later · iPhone</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

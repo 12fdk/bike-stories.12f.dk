@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{META_TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="Robert Jensen">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0B0E" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6783374730">
+
+  <link rel="canonical" href="{{URL}}">
+
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:image" content="{{SITE}}{{COVER}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{URL}}">
+  <meta property="og:site_name" content="Bike Stories">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="{{DATE}}">
+  <meta property="article:tag" content="{{TAG}}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{OG_TITLE}}">
+  <meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{SITE}}{{COVER}}">
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="alternate" type="application/rss+xml" title="Bike Stories Blog" href="/feed.xml">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{JSON_TITLE}},
+    "description": {{JSON_DESCRIPTION}},
+    "image": "{{SITE}}{{COVER}}",
+    "datePublished": "{{DATE}}",
+    "dateModified": "{{DATE_MODIFIED}}",
+    "articleSection": "{{TAG}}",
+    "keywords": {{JSON_KEYWORDS}},
+    "wordCount": {{WORD_COUNT}},
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{URL}}"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Jensen",
+      "url": "https://bike-stories.12f.dk/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "12F ApS",
+      "url": "https://12f.dk/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bike-stories.12f.dk/images/icon.png"
+      }
+    }
+  }
+  </script>
+{{FAQ_JSONLD}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bike-stories.12f.dk/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bike-stories.12f.dk/blog/" },
+      { "@type": "ListItem", "position": 3, "name": {{JSON_TITLE}}, "item": "{{URL}}" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap">
+      <a href="/" class="brand">
+        <img src="/images/icon.png" alt="" width="34" height="34">
+        Bike Stories
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li class="nav-cta-mobile">
+            <a class="btn btn--primary btn--sm" href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">Get the app</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--sm nav-cta" data-umami-event="appstore-click" data-umami-event-placement="blog-post-header" href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">Get the app</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="wrap">
+
+        <div class="article-head">
+          <p class="crumbs"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a></p>
+          <p class="post-meta"><span class="tag">{{TAG}}</span><time datetime="{{DATE}}">{{DATE_LONG}}</time><span class="dot" aria-hidden="true"></span>{{READING_TIME}} min read<span class="dot" aria-hidden="true"></span>Edited by <a class="byline" href="/about.html" rel="author">Robert Jensen</a></p>
+          <h1>{{TITLE}}</h1>
+          <p class="lede">{{LEDE}}</p>
+        </div>
+
+{{HERO}}
+        <div class="prose">
+{{BODY}}
+        </div>
+{{FAQ_HTML}}
+        <p class="editorial-note">
+          Drafted with AI, then reviewed and edited by
+          <a href="/about.html" rel="author">Robert Jensen</a> before publishing.
+        </p>
+
+        <div class="article-foot">
+          <a href="/blog/">← All posts</a>
+          <span class="tag">{{TAG}}</span>
+        </div>
+
+        <div class="article-cta">
+          <h2>Stop guessing when you last did that</h2>
+          <p>Bike Stories keeps the service history, the parts, the mileage and the real cost of every bike you own — on your iPhone, with no account. Free for two bikes; Pro is a one-time $9.99 unlock.</p>
+          <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="blog-post" aria-label="Download Bike Stories on the App Store">
+            <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+          </a>
+        </div>
+
+        <section class="more-posts">
+          <div class="section-head">
+            <h2>Keep reading</h2>
+          </div>
+          <div class="post-grid">
+{{RELATED}}
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-about">
+          <a href="/" class="brand">
+            <img src="/images/icon.png" alt="" width="34" height="34">
+            Bike Stories
+          </a>
+          <p>The logbook for everyone who loves their bikes: maintenance, parts, mileage and the true cost of every bike you own. No account, nothing sold. Built by 12F ApS in Denmark.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/#how-it-works">How it works</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730">App Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>More</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/feed.xml">RSS feed</a></li>
+            <li><a href="/privacy-policy.html">Privacy policy</a></li>
+            <li><a href="https://12f.dk/">Contact &amp; support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 12F ApS. All rights reserved.</span>
+        <span>Requires iOS 17 or later · iPhone</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

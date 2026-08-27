@@ -1,0 +1,52 @@
+# Bike Stories
+
+> A private maintenance log for every bike you own: services and when the next one is due, parts and how worn they are, rides from Apple Health or GPX, receipts and manuals — plus what each bike actually costs, per kilometre. Free on iPhone; Pro is a one-time $9.99 unlock.
+
+Bike Stories is an iPhone app that keeps the whole story of every bike you own. It tracks maintenance schedules and service history, parts and their wear, rides (logged by hand, imported from Apple Health, or loaded from a GPX file), expenses, documents and photos — and rolls purchase price, parts and servicing into a total cost of ownership with a cost-per-kilometre figure. There is no account: data lives on the device and syncs through the user's own iCloud. It is a logbook, not a social or training platform — there are no leaderboards, no feed and no community.
+
+## Key Facts
+
+- Platform: iOS (iPhone, iOS 17+)
+- Pricing: free to download and free for up to 2 bikes with every logging feature. "Bike Stories Pro" is a one-time $9.99 in-app purchase — unlimited bikes, Apple Health ride import, PDF export, automatic backups. No subscription, no ads
+- Storage: local SwiftData store on the device, shared with the widget and share extension, mirrored to the user's own private iCloud (CloudKit). No Bike Stories server holds user data
+- Privacy: no account, no sign-up, no email. Anonymous usage analytics including session replay go to PostHog (EU) and can be switched off in Settings; bike data is never sent — see https://bike-stories.12f.dk/privacy-policy.html. Nothing is sold
+- Units: kilometres or miles, and the user's own currency, both locale-aware
+- Languages: 49
+- Developer: 12F ApS, Denmark (https://12f.dk/)
+- Website: https://bike-stories.12f.dk/
+- App Store: https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730
+
+## Features
+
+- Multi-bike "Garage": 13 bike types (road, mountain, gravel, hybrid, city, electric, cargo, folding, touring, cyclocross, BMX, kids, other), each with its own history
+- Starter templates: pick the kind of bike you ride and it arrives with a maintenance schedule already in place
+- Cost of ownership per bike: purchase + parts + maintenance + expenses, with a colour-coded breakdown and cost per kilometre or mile
+- Maintenance scheduled by date, by distance, or both, with 10 preset service types and a full service history including costs
+- Local notifications when a service falls due, and before a document (insurance, registration) expires
+- Parts across 13 categories with brand, model, price and wear tracking shown as a life-remaining bar
+- Spares and stock inventory, deducted automatically when a part is fitted
+- Rides: manual entry, Apple Health cycling-workout import (manual or automatic, Pro), and GPX import with the route drawn on a map
+- Per-bike odometer built from logged rides, plus a 12-week activity chart on each bike card
+- Documents: manuals, receipts, warranties, insurance and registration, with renewal reminders
+- Photo galleries per bike and per ride, plus a share extension to file a photo or PDF from another app
+- Insights: distance per month, riding by weekday, spending over time, total spend and cost per distance
+- E-bike battery health checks: measured capacity, estimated range and charge cycles over time
+- Tyre pressure log (front and rear, charted) and a reference setup sheet for pressures, suspension and saddle height
+- Home-screen widget mirroring a bike's odometer, distance this month and next service
+- iCloud sync across the owner's devices; PDF export of the service history and a seller document (Pro); automatic local backups (Pro)
+- Dark mode, Dynamic Type and VoiceOver support; status is never conveyed by colour alone
+
+## What Bike Stories deliberately does not have
+
+- No account, sign-up or login
+- No subscription — Pro is bought once
+- No ads, and no shop, brand or insurer can pay for placement
+- No social feed, leaderboards, segments or training plans — it is a logbook, not a training platform
+- No server of ours holding your bikes; nothing is sold to anyone
+
+## Blog
+
+Practical bike maintenance and running-cost guidance, published at https://bike-stories.12f.dk/blog/ (RSS: https://bike-stories.12f.dk/feed.xml).
+
+- [When to replace a bike chain (and what it costs if you don't)](https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/) — parts-and-wear, 2026-08-27. A practical guide to bicycle chain wear: what "stretch" really means (pin and bushing wear, not metal stretching), how to measure it with a chain checker or a steel ruler, the 0.5% and 0.75% thresholds and which applies to your drivetrain, realistic mileage ranges by riding conditions, and the arithmetic of why replacing a chain on time is the cheapest maintenance decision on the bike.
+

@@ -54,7 +54,7 @@ A practical guide to bicycle chain wear: what "stretch" really means (pin and bu
 
 ### What size bike a kid actually needs — inseam and standover, not age (2026-08-27, kids)
 https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/
-A practical sizing guide for choosing a child's bike using measurement instead of age. Covers how to measure a child's inseam, the standover height check, why the brake-lever reach test matters more than wheel size for safety, and why buying a frame too large to 'grow into' is a genuine safety problem. Includes a worked example for a 5-year-old and the weight consideration that most parents never check. Explicitly separates advice for a balance-bike user from advice for a geared 24-inch user.
+A measurement-based guide to sizing a child's bike: how to take a child's inseam, what standover gap to look for, how high the saddle should be for a beginner versus a confident rider, and how to run the brake-reach check — including the lever reach-adjust screw that fixes most failures. Explains why buying a frame to grow into is a safety problem rather than a preference, gives a worked example for a five-year-old, and covers bike weight with the figures the market actually offers. Notes where US rules on children's bikes differ from the rest of the world.
 
 ## How it works, in detail
 

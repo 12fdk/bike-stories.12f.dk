@@ -8,6 +8,11 @@ whatever the model imagines a rider worries about.
     python3 tools/reddit-topics.py                 # ranked digest, ~60 lines
     python3 tools/reddit-topics.py --json          # same data, machine-readable
     python3 tools/reddit-topics.py --refresh       # ignore the cache
+    python3 tools/reddit-topics.py --windows month,year --max-seconds 1800
+
+A failed scrape is a normal outcome, not a bug: see prompt.md §1, which falls
+back to the ranked topic bank and, for kids-bike topics, does not depend on this
+tool at all.
 
 WHY RSS AND NOT THE JSON API: reddit.com/r/<sub>/top.json returns 403 to both a
 datacenter IP and a home IP now. The Atom feed at /r/<sub>/top/.rss is still
@@ -58,7 +63,14 @@ SUBREDDITS = [
     "bicycling", "Velo", "xbiking", "gravelcycling", "FixedGearBicycle",
     "bikepacking", "BikeMechanics", "daddit",
 ]
-WINDOWS = ["month", "year"]
+# Month only by default. Reddit's anonymous RSS now answers with a
+# x-ratelimit-remaining of 0 and a ~54s reset after a single request, so the
+# budget buys roughly one feed a minute — 13 subs x 2 windows cannot finish, and
+# the first scheduled run proved it: every one of the 13 subs 429'd and the tool
+# spent ~400s backing off before giving up. One window over the priority list
+# fits the budget; pass --windows month,year by hand when you want the deeper
+# corpus and can wait.
+WINDOWS = ["month"]
 
 # Theme buckets. A title can land in several; each is counted once per theme.
 # Keep these lowercase and substring-matched — cheap, and good enough to rank.
@@ -333,7 +345,8 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--subs", help="comma-separated subreddits (default: the consumer set)")
     ap.add_argument("--windows", default=",".join(WINDOWS), help="top windows: month,year")
-    ap.add_argument("--pace", type=float, default=8.0, help="seconds between requests")
+    ap.add_argument("--pace", type=float, default=20.0,
+                    help="seconds between requests (Reddit 429s hard below this)")
     ap.add_argument("--max-seconds", type=float, default=600.0,
                     help="total time budget; stops fetching and reports what it has")
     ap.add_argument("--ttl", type=int, default=20 * 3600, help="cache lifetime in seconds")

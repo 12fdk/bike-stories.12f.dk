@@ -205,6 +205,8 @@ def markdown_to_html(md: str, where: str) -> tuple[str, list[str]]:
             paras = "\n".join(f"  <p>{inline(p.strip())}</p>"
                               for p in re.split(r"\n\s*\n", inner) if p.strip())
             parts.append(f"<blockquote>\n{paras}\n</blockquote>")
+        elif first.startswith("|"):
+            parts.append(_table(lines, where))
         elif re.match(r"^[-*] ", first):
             items = _list_items(lines, r"^[-*] ", where)
             parts.append("<ul>\n" + "\n".join(f"  <li>{i}</li>" for i in items) + "\n</ul>")
@@ -223,10 +225,52 @@ def markdown_to_html(md: str, where: str) -> tuple[str, list[str]]:
                 if ln.strip().startswith("!["):
                     raise BuildError(f"{where}: image {ln.strip()[:60]!r} must be on its own "
                                      f"line, separated by blank lines")
+                if ln.strip().startswith("|"):
+                    raise BuildError(f"{where}: table row {ln.strip()[:60]!r} is inside a "
+                                     f"paragraph — a table must be its own block, separated "
+                                     f"by blank lines, starting with its header row")
             parts.append(f"<p>{inline(' '.join(ln.strip() for ln in lines))}</p>")
 
     return "\n\n".join(parts), images
 
+
+TABLE_SEP = re.compile(r"^\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?$")
+
+
+def _table(lines: list[str], where: str) -> str:
+    """Render a pipe table.
+
+    Kept deliberately strict. `prompt.md` §4 invites a small table for ranges
+    and intervals, and `.prose table` has always been styled for one — but the
+    renderer had no table branch, so a table silently came out as a single
+    paragraph of pipe characters. That shipped once. A malformed table is now a
+    build error rather than a paragraph nobody reads before pushing.
+    """
+    rows = [ln.strip() for ln in lines if ln.strip()]
+    if len(rows) < 3 or not TABLE_SEP.match(rows[1]):
+        raise BuildError(
+            f"{where}: table starting {rows[0][:60]!r} needs a header row, a "
+            f"`|---|---|` separator row and at least one body row")
+
+    def cells(row: str) -> list[str]:
+        return [c.strip() for c in row.strip().strip("|").split("|")]
+
+    head = cells(rows[0])
+    body = [cells(r) for r in rows[2:]]
+    for r in body:
+        if len(r) != len(head):
+            raise BuildError(f"{where}: table row {' | '.join(r)[:60]!r} has {len(r)} cells, "
+                             f"header has {len(head)}")
+
+    out = ["<table>", "  <thead>", "    <tr>"]
+    out += [f"      <th>{inline(c)}</th>" for c in head]
+    out += ["    </tr>", "  </thead>", "  <tbody>"]
+    for r in body:
+        out.append("    <tr>")
+        out += [f"      <td>{inline(c)}</td>" for c in r]
+        out.append("    </tr>")
+    out += ["  </tbody>", "</table>"]
+    return "\n".join(out)
 
 def _list_items(lines: list[str], marker: str, where: str) -> list[str]:
     items: list[str] = []

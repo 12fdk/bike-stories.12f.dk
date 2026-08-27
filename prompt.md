@@ -255,8 +255,19 @@ rules:
   belongs in the seatpost and the stem, not in a frame two sizes up. If a post
   touches sizing at all, this has to be in it.
 - **Weight is a real spec on a kid's bike, and a checkable one.** Bike weight
-  as a fraction of the child's own weight is the honest way to frame it; quote
-  the manufacturer's published weight or none at all, never an estimate.
+  as a fraction of the child's own weight is the honest way to frame it, and the
+  figure usually quoted is **under about 30–40% of the child's body weight**.
+  Do not invent a stricter ratio: the first draft of the sizing post asserted
+  one-fifth, which no bike on the market meets, and the post then had to spend a
+  paragraph explaining away its own rule. Quote a manufacturer's published
+  weight or a segment range (light 16-inch bikes are ~5–6 kg, mainstream ones
+  ~8–11 kg), never an estimate of a specific bike.
+- **Check what is adjustable before calling a bike wrong.** Brake lever reach
+  (a screw at the lever pivot), saddle height and stem position are all
+  adjustable on most children's bikes; handlebar reach and standover are not.
+  A draft that told parents to reject a bike their child could not brake on —
+  when winding the reach screw in is the actual first fix — was wrong in the
+  most useful part of the post.
 
 ---
 

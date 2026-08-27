@@ -28,7 +28,8 @@ time even if the app did not exist. Write for all of these:
 - People who take the bike to a shop and want to know what they're paying for
 - E-bike owners with an expensive machine and a battery that quietly ages
 - Riders with several bikes, each on its own service clock
-- Parents keeping a family fleet on the road
+- Parents keeping a family fleet on the road, and parents buying or
+  handing down a child's bike and trying to size it right
 - Anyone buying or selling second-hand, where history is worth money
 
 **The app, factually (never claim more than this):**
@@ -84,14 +85,31 @@ python3 tools/reddit-topics.py          # ranked digest of what riders are askin
 python3 tools/reddit-topics.py --json
 ```
 
+**The three beats this blog is for**, in the order the demand sits: **DIY repair
+and servicing**, **when a part is genuinely worn out and has to be replaced**,
+and **choosing the right bike for a kid**. Everything in the bank below fits one
+of them. A theme outside them can still win if the digest shows real demand —
+but these are what the site is being built on.
+
 It reads cycling subreddits (r/bikewrench first — it is nothing but maintenance
-questions) over Reddit's Atom feeds, filters out bike-check photos and venting,
+questions; r/daddit is on the end as the only sub where a kid-bike question is
+on topic at all) over Reddit's Atom feeds, filters out bike-check photos and venting,
 clusters the real questions into themes, and marks the themes an existing post
 already covers. Reddit rate-limits it hard — **a failed scrape is expected and
 fine**. Fall back to the topic bank below.
 
 ### How to choose (do this, in order)
 
+0. **Check the kids-bike rotation first.** Count the posts in `posts/` whose
+   frontmatter `tag` is `kids`:
+   ```
+   grep -l '^tag: kids' posts/*.md | wc -l ; ls posts/*.md | wc -l
+   ```
+   **Roughly one post in three should be a `kids` post.** If fewer than a third
+   of the posts published so far are tagged `kids`, this run writes a kids-bike
+   post — take the `kids-bikes` theme from the digest if it appears, and the
+   highest unused kid entry (21–30) from the bank if it does not. Then skip to
+   step 3.
 1. Run the tool. Redirect its output to a file and read the digest, not the raw
    dump.
 2. Pick a theme that is **(a)** genuinely being asked about, **(b)** not already
@@ -101,6 +119,14 @@ fine**. Fall back to the topic bank below.
    motor, and what the shop actually does" beats "Bike maintenance tips".
 4. If the scrape fails or every strong theme is covered, take the highest unused
    entry from the bank.
+
+**Why step 0 exists.** Measured on 2026-08-27: across r/cycling, r/MTB,
+r/bicycling and r/bikecommuting, month and year, 166 posts yielded 25 carrying a
+real question and **zero** about kids' bikes — those subs' `/top` is photographs.
+r/bikewrench is the only feed that reliably produces demand, and it is adults
+fixing their own bikes. So kid-bike demand is real (it is one of the three beats)
+but essentially invisible to this tool, and without a rotation rule the digest
+would keep winning and the site would never publish one.
 
 ### Ranked topic bank (fallback, and a map of angles that fit the app)
 
@@ -127,6 +153,16 @@ final report when you use it.
 18. Managing several bikes without letting one quietly rot
 19. Tyre pressure: what the numbers on the sidewall don't tell you
 20. Storing a bike over winter without paying for it in spring
+21. What size bike a kid actually needs — inseam and standover, not age
+22. A child's first pedal bike: balance bike, stabilisers, or straight to pedals
+23. Kids' bikes: the five things worth paying for, and the ones that don't matter
+24. Bike weight and a child: why a 12 kg bike is too heavy for a 5-year-old
+25. Brake reach on a kid's bike, and the check that takes ten seconds
+26. Handing a bike down: what to service before the next child rides it
+27. Buying a used kid's bike: the inspection, and what it's worth paying
+28. When a kid has outgrown a bike — the signs, before the knees hit the bars
+29. Getting a kid's bike through a winter of being left outside
+30. What actually breaks on a kid's bike, and which of it is worth fixing
 
 ---
 
@@ -208,6 +244,19 @@ rules:
 - **Be honest about what a logbook can and cannot tell you.** Distance since
   fitting is an excellent planning signal and a poor substitute for looking at
   the part.
+- **On a kid's bike, size is a fit measurement, not an age.** Wheel size charts
+  sold by age are marketing; the numbers that decide it are the child's inseam
+  against standover height and saddle height, and whether they can reach the
+  brake levers and squeeze them. Give the measurement and how to take it. Say
+  which reader an answer is for — a 3-year-old on a balance bike and a
+  9-year-old on a geared 24" are different bikes and different advice.
+- **Never recommend buying a kid's bike too big to "grow into".** A child who
+  cannot get a foot down or reach the levers cannot stop the bike. Growing room
+  belongs in the seatpost and the stem, not in a frame two sizes up. If a post
+  touches sizing at all, this has to be in it.
+- **Weight is a real spec on a kid's bike, and a checkable one.** Bike weight
+  as a fraction of the child's own weight is the honest way to frame it; quote
+  the manufacturer's published weight or none at all, never an estimate.
 
 ---
 
@@ -242,7 +291,7 @@ ogDescription: "..."    # optional, for link previews; defaults to description
 lede: "..."             # 1–2 sentences under the H1. Concrete, no fluff
 excerpt: "..."          # ≤ 220 chars, the blog-index card text
 teaserExcerpt: "..."    # optional shorter card text for the homepage; defaults to lede
-tag: maintenance        # exactly one of: maintenance | parts-and-wear | costs | riding
+tag: maintenance        # one of: maintenance | parts-and-wear | costs | riding | kids
 date: 2026-08-27        # today's date, YYYY-MM-DD
 keywords: "a, b, c"     # 4–6 comma-separated terms for the Article schema
 summary: >
@@ -271,7 +320,7 @@ faq:
 Rules the build enforces, so get them right the first time:
 
 - `title` ≤ 70 chars, `description` ≤ 160, `excerpt` ≤ 220. **Count the characters.**
-- `tag` must be exactly one of these four — pick by what the post is really
+- `tag` must be exactly one of these five — pick by what the post is really
   about, not by a keyword it happens to contain:
   - `maintenance` — servicing and the work itself: intervals, what a service
     includes, brakes, suspension, cleaning, shop-versus-DIY, tools.
@@ -281,6 +330,11 @@ Rules the build enforces, so get them right the first time:
     are worth, resale, insurance, buying used.
   - `riding` — the rider's situation: commuting, winter, storage, travel with a
     bike, managing several bikes, keeping records.
+  - `kids` — a child's bike: choosing it, sizing it, handing it down, what
+    breaks on it. Use this for anything written *for a parent about a child's
+    bike*, even where the subject is wear or money — the tag is how the
+    kids-bike rotation in §1 is counted, so a kid post filed under
+    `parts-and-wear` is invisible to it.
   Do not invent a new tag.
 - `related` slugs must already exist as files in `posts/`, and must not include
   this post. **Check first** — `ls posts/` — and list only what is there. Fewer
@@ -313,7 +367,9 @@ tag soup. Fitting scenes for this blog: a chain and cassette in low workshop
 light; hands with a chain checker on a drivetrain; a bike in a work stand in a
 garage; a wheel off and pads visible in a caliper; a commuter bike leaning
 against a wet wall in winter; a bench with tools laid out; a bike in a hallway
-with panniers.
+with panniers. For a `kids` post: a small bike propped against a garden wall, a
+child's bike on a work stand with an adult's hands on it, a row of small bikes
+outside a school, a 16-inch wheel next to a full-size one on a workshop floor.
 
 **Never generate:** recognisable branding or logos, text of any kind (models
 render it as gibberish), identifiable faces, or anything implying a specific

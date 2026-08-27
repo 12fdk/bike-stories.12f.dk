@@ -192,6 +192,13 @@ a sceptical mechanic on r/bikewrench should upvote it and never feel sold to.
   "ultimate", "supercharge"), fake urgency, "download now!", exclamation-mark
   selling, review-style praise of the app, or implying the reader is foolish for
   not using it.
+- **Do not assert that readers are negligent.** "The check most parents never
+  make", "the spec nobody looks at" and "the mistake everyone makes" are invented
+  statistics wearing a rhetorical hat, and they break the no-made-up-numbers rule
+  and the never-talk-down rule at once. If a thing is genuinely overlooked, say
+  what makes it easy to overlook — the reference post's "'when did I fit this
+  chain?' is a question almost nobody can answer in kilometres" is the move:
+  sympathetic, and true.
 - Never invent first-person anecdotes. "You're standing over the bike with a
   ruler" is fine — it addresses the reader. "I ran a chain to 1%" is not.
 - The **gold-standard reference** is `posts/when-to-replace-a-bike-chain.md` —

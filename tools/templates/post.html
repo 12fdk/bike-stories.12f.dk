@@ -16,8 +16,9 @@
   <meta property="og:title" content="{{OG_TITLE}}">
   <meta property="og:description" content="{{OG_DESCRIPTION}}">
   <meta property="og:image" content="{{SITE}}{{COVER}}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="{{COVER_W}}">
+  <meta property="og:image:height" content="{{COVER_H}}">
+  <meta property="og:image:alt" content="{{COVER_ALT}}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{URL}}">
   <meta property="og:site_name" content="Bike Stories">
@@ -29,6 +30,7 @@
   <meta name="twitter:title" content="{{OG_TITLE}}">
   <meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}">
   <meta name="twitter:image" content="{{SITE}}{{COVER}}">
+  <meta name="twitter:image:alt" content="{{COVER_ALT}}">
 
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -49,7 +51,12 @@
     "@type": "Article",
     "headline": {{JSON_TITLE}},
     "description": {{JSON_DESCRIPTION}},
-    "image": "{{SITE}}{{COVER}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{SITE}}{{COVER}}",
+      "width": {{COVER_W}},
+      "height": {{COVER_H}}
+    },
     "datePublished": "{{DATE}}",
     "dateModified": "{{DATE_MODIFIED}}",
     "articleSection": "{{TAG}}",
@@ -61,18 +68,13 @@
       "@id": "{{URL}}"
     },
     "author": {
-      "@type": "Person",
-      "name": "Robert Jensen",
-      "url": "https://bike-stories.12f.dk/about.html"
+      "@id": "https://12f.dk/#organization"
+    },
+    "editor": {
+      "@id": "https://bike-stories.12f.dk/about.html#robert-jensen"
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "12F ApS",
-      "url": "https://12f.dk/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://bike-stories.12f.dk/images/icon.png"
-      }
+      "@id": "https://12f.dk/#organization"
     }
   }
   </script>

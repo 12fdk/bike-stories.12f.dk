@@ -272,6 +272,17 @@ def _table(lines: list[str], where: str) -> str:
     out += ["  </tbody>", "</table>"]
     return "\n".join(out)
 
+def _png_size(path: Path) -> tuple[int, int] | None:
+    """Width/height from a PNG IHDR. Stdlib only — build.py has no Pillow."""
+    try:
+        head = path.read_bytes()[:24]
+    except OSError:
+        return None
+    if head[:8] != b"\x89PNG\r\n\x1a\n":
+        return None
+    return int.from_bytes(head[16:20], "big"), int.from_bytes(head[20:24], "big")
+
+
 def _list_items(lines: list[str], marker: str, where: str) -> list[str]:
     items: list[str] = []
     for ln in lines:
@@ -372,6 +383,19 @@ class Post:
     @property
     def cover(self) -> str:
         return f"/images/blog/{self.slug}.png"
+
+    @property
+    def cover_size(self) -> tuple[int, int]:
+        """The cover's REAL pixel size, read from the PNG header.
+
+        This used to be hardcoded as 1200x630 in three places. ComfyUI returns
+        whatever its workflow produced — the first generated cover came back
+        1200x624 — so the `<img>` reserved a box 6px too tall and shifted the
+        page on load (a CLS hit on the largest element above the fold), while
+        og:image:height told every scraper the wrong number. The WebP variant is
+        generated from this PNG at the same size, so one measurement serves both.
+        """
+        return _png_size(ROOT / self.cover.lstrip("/")) or (1200, 630)
 
     @property
     def card_image(self) -> str:
@@ -488,7 +512,8 @@ def card(p: Post, heading: str, extra_class: str = "", excerpt: str | None = Non
     body = [
         f'<article class="{cls}">',
         '  <div class="post-card-media">',
-        f'    <img src="{p.card_image}" alt="{alt}" width="1200" height="630" loading="lazy">',
+        f'    <img src="{p.card_image}" alt="{alt}" width="{p.cover_size[0]}" '
+        f'height="{p.cover_size[1]}" loading="lazy">',
         '  </div>',
         '  <div class="post-card-body">',
         f'    <p class="post-meta"><span class="tag">{p.tag}</span>'
@@ -565,7 +590,8 @@ def hero_html(p: Post) -> str:
         return ""
     return ("\n        <figure class=\"article-hero\">\n"
             f'          <img src="{p.card_image}" alt="{attr(p.cover_alt)}" '
-            'width="1200" height="630" fetchpriority="high" decoding="async">\n'
+            f'width="{p.cover_size[0]}" height="{p.cover_size[1]}" '
+            'fetchpriority="high" decoding="async">\n'
             "        </figure>\n")
 
 
@@ -582,6 +608,9 @@ def render_post(p: Post, posts: list[Post], template: str) -> str:
         "URL": p.url,
         "SITE": SITE,
         "COVER": p.cover,
+        "COVER_W": str(p.cover_size[0]),
+        "COVER_H": str(p.cover_size[1]),
+        "COVER_ALT": attr(p.cover_alt or p.title),
         "OG_TITLE": attr(p.og_title),
         "OG_DESCRIPTION": attr(p.og_description),
         "TWITTER_DESCRIPTION": attr(p.twitter_description),
@@ -738,7 +767,7 @@ def build_blog_schema_region(posts: list[Post]) -> str:
         "headline": {json.dumps(p.title, ensure_ascii=False)},
         "url": "{p.url}",
         "datePublished": "{p.date.isoformat()}",
-        "image": "{SITE}{p.cover}"
+        "image": "{SITE}{p.card_image}"
       }}""" for p in posts)
     return f"""  <script type="application/ld+json">
   {{

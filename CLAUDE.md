@@ -215,16 +215,30 @@ post, `prompt.md`, and the topic-research tool.
 
 Open, and worth knowing about:
 
-- **DNS** — `bike-stories CNAME 12fdk.github.io` must exist before the custom
-  domain resolves; GitHub Pages must be enabled on `main`.
-- **Analytics** — the sister sites carry an Umami tag
-  (umami.robert-jensen.dk) on every page. This site does **not** yet: it needs
-  its own website id created in Umami. The CTA links already carry
-  `data-umami-event="appstore-click"` + `data-umami-event-placement="…"`, so
-  adding the script tag to `index.html`, `about.html`, `privacy-policy.html`,
-  `404.html`, `blog/index.html` and `tools/templates/post.html` is all that is
-  left. Track per-placement CTA clicks so the funnel is measurable per section.
+- **HSTS** — no `strict-transport-security` header. It is a Cloudflare edge
+  setting, not a repo change.
+- **Content volume is the constraint.** Five indexable URLs and one blog post.
+  The weekly blog job (`prompt.md`) is written and ready; the cron on the spark
+  is not set up yet. Nothing else on this site moves the needle as much.
 - **App Store Connect** has no privacy-policy URL set for the app; point it at
   `https://bike-stories.12f.dk/privacy-policy.html`.
-- The weekly blog cron job on the spark is not set up yet; `prompt.md` is ready
-  for it.
+- Verify the property in Google Search Console and Bing Webmaster Tools and
+  submit `sitemap.xml` (IndexNow covers Bing/Yandex/Seznam/Naver/Yep on deploy,
+  but not Google).
+
+Done since launch (SEO/GEO/AEO audit, 2026-08-27 — issues #2–#8):
+
+- Umami is live on all six page templates (website id
+  `851074a3-d8a2-4c1d-929a-138eea1f9161`), so the `data-umami-event`
+  CTA instrumentation actually records.
+- DNS resolves (Cloudflare-proxied) and HTTPS serves with Brotli.
+- The H1 carries the target term; titles ≤60 and descriptions ≤155 sitewide.
+- `hero: false` on gradient-card covers, so a post never prints its title twice.
+- `build.py` gives blog cover images real alt text (`coverAlt`, falling back to
+  the title) instead of `alt=""`.
+- Optional `howtoName` / `howtoDescription` / `howtoSteps` frontmatter emits
+  `HowTo` schema for posts containing a genuine procedure. Only use it when the
+  steps match visible on-page text.
+- `WebSite`, `Person` and `ContactPoint` entities added; `Organization.sameAs`
+  lists only profiles 12F genuinely controls — never pad it.
+- The hero WebP is preloaded (it is the LCP element).

@@ -309,6 +309,13 @@ related: [slug-a, slug-b]   # up to 2 ALREADY-PUBLISHED slugs for the "Keep
                         #   fixed two. Omit the key entirely if this is the
                         #   only post. NEVER invent a slug: the build rejects
                         #   a slug that is not a published post.
+howtoName: "..."        # OPTIONAL. Only when the post contains a real, ordered
+howtoDescription: "..."  #   procedure that a reader follows step by step.
+howtoSteps:              #   Emits HowTo schema. Needs at least two steps, and
+  - name: "..."          #   every step's text MUST match visible on-page content
+    text: "..."          #   — schema that does not match the page is a violation,
+  - name: "..."          #   not a bonus. Omit all three keys otherwise.
+    text: "..."
 faq:
   - question: "..."
     answer: "..."
@@ -343,6 +350,8 @@ Rules the build enforces, so get them right the first time:
   more than one post the build **requires** at least one inline link to another
   post where it is genuinely relevant.
 - The cover image `images/blog/<slug>.png` must exist before the build passes.
+- `howtoSteps` requires `howtoName` and at least two steps, and every step needs
+  both `name` and `text`. The build rejects anything else.
 - Minimum 700 words (you are aiming for far more than that).
 - Exactly one Bike Stories mention in the body (two at most); the build rejects
   zero or 3+.

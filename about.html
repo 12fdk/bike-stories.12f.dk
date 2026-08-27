@@ -30,7 +30,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
+  <link rel="preconnect" href="https://umami.robert-jensen.dk" crossorigin>
+  <link rel="dns-prefetch" href="https://umami.robert-jensen.dk">
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Analytics: privacy-friendly, cookieless (Umami) -->
+  <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="851074a3-d8a2-4c1d-929a-138eea1f9161"></script>
 
   <script type="application/ld+json">
   {
@@ -38,7 +43,27 @@
     "@type": "AboutPage",
     "name": "About Bike Stories",
     "url": "https://bike-stories.12f.dk/about.html",
-    "publisher": { "@type": "Organization", "name": "12F ApS", "url": "https://12f.dk/" }
+    "publisher": { "@id": "https://12f.dk/#organization" },
+    "mainEntity": { "@id": "https://bike-stories.12f.dk/about.html#robert-jensen" }
+  }
+  </script>
+  <!-- The author every post is bylined to, as a real entity. Article.author on
+       the posts points at this URL, so the two resolve to the same person. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://bike-stories.12f.dk/about.html#robert-jensen",
+    "name": "Robert Jensen",
+    "url": "https://bike-stories.12f.dk/about.html",
+    "jobTitle": "Founder and developer",
+    "knowsAbout": ["Bicycle maintenance", "iOS app development", "Cost of ownership tracking"],
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://12f.dk/#organization",
+      "name": "12F ApS",
+      "url": "https://12f.dk/"
+    }
   }
   </script>
 </head>

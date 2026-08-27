@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bike Stories — Bike Maintenance Log &amp; Cost Tracker | iPhone App</title>
-  <meta name="description" content="Track bike maintenance, parts, mileage and the true cost of every bike you own. Service reminders, Apple Health rides, wear tracking. Free on iPhone, no account.">
+  <title>Bike Stories — Bike Maintenance Log for iPhone</title>
+  <meta name="description" content="A bike maintenance log for iPhone: service schedules and reminders, parts wear, mileage and the true cost of every bike you own. Free, no account.">
   <meta name="keywords" content="bike maintenance log, bicycle service tracker, bike cost tracker, chain wear tracker, cycling logbook app, bike odometer app, mtb maintenance, e-bike battery health, bike parts tracker, gpx ride log">
   <meta name="author" content="12F ApS">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -45,7 +45,15 @@
 
   <link rel="alternate" type="application/rss+xml" title="Bike Stories Blog" href="/feed.xml">
 
+  <link rel="preconnect" href="https://umami.robert-jensen.dk" crossorigin>
+  <link rel="dns-prefetch" href="https://umami.robert-jensen.dk">
+  <!-- The hero screenshot is the LCP element; preload it so it starts
+       downloading before the stylesheet has finished parsing. -->
+  <link rel="preload" as="image" href="/images/screenshots/en-US/02-CostOfOwnership.webp" fetchpriority="high">
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Analytics: privacy-friendly, cookieless (Umami) -->
+  <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="851074a3-d8a2-4c1d-929a-138eea1f9161"></script>
 
   <!-- Structured Data: WebPage with SpeakableSpecification.
        Points voice assistants at the definition block and the FAQ — the two
@@ -130,11 +138,25 @@
   }
   </script>
 
-  <!-- Structured Data: Organization -->
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bike Stories",
+  "url": "https://bike-stories.12f.dk/",
+  "inLanguage": "en",
+  "publisher": { "@id": "https://12f.dk/#organization" }
+}
+  </script>
+  <!-- Structured Data: Organization.
+       sameAs lists only profiles the company genuinely controls — inventing
+       social links to pad the entity graph is worse than a short list. -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://12f.dk/#organization",
   "name": "12F ApS",
   "url": "https://12f.dk/",
   "logo": "https://bike-stories.12f.dk/images/icon.png",
@@ -143,8 +165,15 @@
     "addressCountry": "DK"
   },
   "sameAs": [
-    "https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730"
+    "https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730",
+    "https://github.com/12fdk"
   ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "url": "https://12f.dk/",
+    "availableLanguage": ["en", "da"]
+  },
   "founder": {
     "@type": "Person",
     "name": "Robert Jensen",
@@ -299,7 +328,7 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1>Every part, every service,<br class="br-lg"><span class="rule">every kilometre</span>.</h1>
+            <h1>A bike maintenance log for every part, every service, <span class="rule">every kilometre</span>.</h1>
             <p class="hero-sub">Bike Stories keeps the whole story of every bike you own — what it cost, what has been done to it, what is wearing out, and what is due next. On your iPhone, with no account and nothing sold.</p>
             <div class="cta-row">
               <a href="https://apps.apple.com/us/app/bike-stories-maintenance-log/id6783374730" class="app-badge" data-umami-event="appstore-click" data-umami-event-placement="hero" aria-label="Download Bike Stories on the App Store">
@@ -375,7 +404,8 @@
       <div class="wrap">
         <div class="answer-block fade-in">
           <h2>What is Bike Stories?</h2>
-          <p class="answer-lede"><strong>Bike Stories is an iPhone app that keeps a maintenance log for every bike you own, and works out what each one actually costs you.</strong> It tracks services and when the next one is due, parts and how worn they are, rides from Apple Health or a GPX file, receipts, manuals and warranties — then rolls it all into total cost of ownership and cost per kilometre. It is free to download, needs no account, and your data stays in your own iCloud.</p>
+          <p class="answer-lede"><strong>Bike Stories is an iPhone app that keeps a maintenance log for every bike you own: what has been serviced, what is due next, which parts are wearing out, and what each bike has cost you per kilometre.</strong> It is free to download and needs no account.</p>
+          <p class="answer-lede">It logs rides by hand, from Apple Health or from a GPX file, stores receipts, manuals and warranties, charts distance and spending over time, and keeps all of it on your iPhone and in your own iCloud — never on a server of ours.</p>
         </div>
 
         <div class="answer-grid">
@@ -908,7 +938,7 @@
           <!-- BLOG:TEASER:START — generated by tools/build.py, do not hand-edit -->
           <article class="post-card fade-in">
             <div class="post-card-media">
-              <img src="/images/blog/when-to-replace-a-bike-chain.png" alt="" width="1200" height="630" loading="lazy">
+              <img src="/images/blog/when-to-replace-a-bike-chain.png" alt="A bicycle drivetrain seen from the side, chain running over the cassette" width="1200" height="630" loading="lazy">
             </div>
             <div class="post-card-body">
               <p class="post-meta"><span class="tag">parts-and-wear</span><time datetime="2026-08-27">27 Aug 2026</time><span class="dot" aria-hidden="true"></span>6 min read</p>

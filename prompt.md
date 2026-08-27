@@ -133,7 +133,7 @@ would keep winning and the site would never publish one.
 These fit the product without being about the product. Cross one off in your
 final report when you use it.
 
-1. When to replace a bike chain (and what it costs if you don't) *(used: 2026-08-27)*
+1. When to replace a bike chain (and what it costs if you don't)
 2. What a bike actually costs per kilometre, and how to work yours out
 3. Brake pads: how to tell when they're done, and what happens if you wait
 4. A realistic service schedule for a year-round commuter bike
@@ -201,9 +201,11 @@ a sceptical mechanic on r/bikewrench should upvote it and never feel sold to.
   sympathetic, and true.
 - Never invent first-person anecdotes. "You're standing over the bike with a
   ruler" is fine — it addresses the reader. "I ran a chain to 1%" is not.
-- The **gold-standard reference** is `posts/when-to-replace-a-bike-chain.md` —
-  its tone is exactly right. To save context, skim only the top:
-  `head -40 posts/when-to-replace-a-bike-chain.md`.
+- The **gold-standard reference** is the most recent post in `posts/` that is
+  not the one you are writing. To save context, skim only the top:
+  `head -40 posts/<slug>.md`. (The chain post that used to be named here was
+  removed from the site on 2026-08-27; do not link to it, and do not assume any
+  post you remember still exists — `ls posts/` first.)
 
 **The brand is always `Bike Stories`** — two words, both capitalised. Never
 "BikeStories", never "bike stories" mid-sentence. (The app's own product name in

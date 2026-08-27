@@ -19,7 +19,6 @@ summary: >
   US rules on children's bikes differ from the rest of the world.
 coverAlt: "A small child's red bicycle propped against a white garden wall in soft afternoon light, low angle"
 hero: true
-related: [when-to-replace-a-bike-chain]
 howtoName: "How to size a child's bike"
 howtoDescription: "Choose the right size bicycle for a child using inseam, standover and brake reach rather than an age or wheel-size chart."
 howtoSteps:
@@ -136,7 +135,7 @@ Plenty of bikes fail it, and the rule is still worth using, because the market s
 
 The signs arrive in order: the saddle is at its maximum and the leg still bends too much at the bottom of the stroke, the knees start coming up towards the bars, and the standover clearance has opened up well past the 5 cm you measured. That last one is the easy one to misread — a bike gets *more* standover clearance as the child grows, not less, and once there is a hand's width of it the frame is under them rather than around them.
 
-Write down the inseam and the date each time you check, and the next decision is easy, including which child the bike moves to next. A notebook does this perfectly well, as does an app like Bike Stories, which keeps a reference setup sheet next to each bike's service history. What matters is that the number lives somewhere other than memory — a bike handed down twice usually arrives with a chain nobody has thought about for either of those cycles, and [when to replace a bike chain](/blog/when-to-replace-a-bike-chain/) is the same question whatever size the wheels are.
+Write down the inseam and the date each time you check, and the next decision is easy, including which child the bike moves to next. A notebook does this perfectly well, as does an app like Bike Stories, which keeps a reference setup sheet next to each bike's service history. What matters is that the number lives somewhere other than memory — a bike handed down twice usually arrives with a drivetrain nobody has thought about for either of those cycles, and the chain wear that ends a cassette is the same question whatever size the wheels are.
 
 ## The short version
 

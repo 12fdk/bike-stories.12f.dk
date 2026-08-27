@@ -48,10 +48,6 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
-### When to replace a bike chain (and what it costs if you don't) (2026-08-27, parts-and-wear)
-https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/
-A practical guide to bicycle chain wear: what "stretch" really means (pin and bushing wear, not metal stretching), how to measure it with a chain checker or a steel ruler, the 0.5% and 0.75% thresholds and which applies to your drivetrain, realistic mileage ranges by riding conditions, and the arithmetic of why replacing a chain on time is the cheapest maintenance decision on the bike. Includes what to do when you have already left it too late.
-
 ### What size bike a kid actually needs — inseam and standover, not age (2026-08-27, kids)
 https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/
 A measurement-based guide to sizing a child's bike: a starting-point chart by age, height and inseam, how to take a child's inseam, how much standover clearance to look for, how high the saddle should be for a beginner versus a confident rider, and how to run the brake-reach check — including the lever reach-adjust screw to try before rejecting a bike. Explains why buying a frame to grow into is a safety problem rather than a preference, gives a worked example for a five-year-old, covers bike weight with the figures the market actually offers, and lists the signs a child has outgrown a bike. Notes where US rules on children's bikes differ from the rest of the world.

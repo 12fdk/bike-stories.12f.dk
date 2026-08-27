@@ -16,9 +16,14 @@ tool at all.
 
 WHY RSS AND NOT THE JSON API: reddit.com/r/<sub>/top.json returns 403 to both a
 datacenter IP and a home IP now. The Atom feed at /r/<sub>/top/.rss is still
-served, so that is what this uses. It is rate-limited though: hammer it and you
-get 429s, which is why requests are paced, retried with backoff, and cached to
-.cache/ for a day.
+served, so that is what this uses. It is rate-limited though — measured
+2026-08-27, an anonymous request comes back with x-ratelimit-remaining 0 and a
+~54s reset, so the real budget is about one feed a minute. That is why requests
+are paced at 50s, retried with backoff, and cached to .cache/ for a day. At an
+8s pace every feed 429'd; at 20s every feed 429'd once and then succeeded after
+a 30s backoff, which costs the same wall-clock as simply waiting. The 600s
+budget therefore buys the first ~11 subreddits, which is what SUBREDDITS is
+ordered for.
 
 WHY A SCRIPT AND NOT A FEW CURL COMMANDS IN THE BRIEF: the Hermes agent's
 terminal blocks `-c` / `-e` flags, so `python3 -c '...'` and clever one-liners
@@ -345,8 +350,8 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--subs", help="comma-separated subreddits (default: the consumer set)")
     ap.add_argument("--windows", default=",".join(WINDOWS), help="top windows: month,year")
-    ap.add_argument("--pace", type=float, default=20.0,
-                    help="seconds between requests (Reddit 429s hard below this)")
+    ap.add_argument("--pace", type=float, default=50.0,
+                    help="seconds between requests; Reddit allows about one feed a minute")
     ap.add_argument("--max-seconds", type=float, default=600.0,
                     help="total time budget; stops fetching and reports what it has")
     ap.add_argument("--ttl", type=int, default=20 * 3600, help="cache lifetime in seconds")

@@ -153,7 +153,7 @@ final report when you use it.
 18. Managing several bikes without letting one quietly rot
 19. Tyre pressure: what the numbers on the sidewall don't tell you
 20. Storing a bike over winter without paying for it in spring
-21. What size bike a kid actually needs — inseam and standover, not age
+21. What size bike a kid actually needs — inseam and standover, not age *(used: 2026-08-27)*
 22. A child's first pedal bike: balance bike, stabilisers, or straight to pedals
 23. Kids' bikes: the five things worth paying for, and the ones that don't matter
 24. Bike weight and a child: why a 12 kg bike is too heavy for a 5-year-old

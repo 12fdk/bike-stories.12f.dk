@@ -52,6 +52,10 @@ The Bike Stories blog publishes practical bicycle maintenance guidance — what 
 https://bike-stories.12f.dk/blog/when-to-replace-a-bike-chain/
 A practical guide to bicycle chain wear: what "stretch" really means (pin and bushing wear, not metal stretching), how to measure it with a chain checker or a steel ruler, the 0.5% and 0.75% thresholds and which applies to your drivetrain, realistic mileage ranges by riding conditions, and the arithmetic of why replacing a chain on time is the cheapest maintenance decision on the bike. Includes what to do when you have already left it too late.
 
+### What size bike a kid actually needs — inseam and standover, not age (2026-08-27, kids)
+https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/
+A practical sizing guide for choosing a child's bike using measurement instead of age. Covers how to measure a child's inseam, the standover height check, why the brake-lever reach test matters more than wheel size for safety, and why buying a frame too large to 'grow into' is a genuine safety problem. Includes a worked example for a 5-year-old and the weight consideration that most parents never check. Explicitly separates advice for a balance-bike user from advice for a geared 24-inch user.
+
 ## How it works, in detail
 
 1. **Add a bike.** Tap one of the starter templates — the kind of bike you ride — and Bike Stories creates the bike with a maintenance schedule that suits it (a city bike and a full-suspension mountain bike do not need the same services). Or fill in the form yourself: name, type, brand, model, purchase date and price, and the odometer reading you are starting from.

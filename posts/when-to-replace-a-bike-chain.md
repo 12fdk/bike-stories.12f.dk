@@ -178,4 +178,7 @@ three useful. Whether you keep it in an app, a notebook or a text file matters
 much less than keeping it at all: the number you want, on the day you are
 standing over the bike wondering, is "how far since I fitted this?" — and that
 number has to have been recorded months earlier by someone who did not yet know
-they would need it.
+they would need it. The same logic applies to a child's bike: the chain on the
+5-year-old's bike is no less wear-prone just because the rider is smaller, and
+if you have a family fleet to look after, the sizing question that comes first
+is covered in our guide on [what size bike a kid actually needs](/blog/what-size-bike-a-kid-actually-needs/).

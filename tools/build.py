@@ -276,6 +276,16 @@ class Post:
         self.hero = bool(meta.get("hero", False))
         self.related = [str(s).strip() for s in (meta.get("related") or [])]
         self.faq = [f for f in (meta.get("faq") or []) if isinstance(f, dict)]
+        self.howto_name = str(meta.get("howtoName", "")).strip()
+        self.howto_description = str(meta.get("howtoDescription", "")).strip()
+        self.howto_steps = [st for st in (meta.get("howtoSteps") or []) if isinstance(st, dict)]
+        if self.howto_steps and not self.howto_name:
+            raise BuildError(f"{where}: howtoSteps needs a howtoName")
+        if self.howto_name and len(self.howto_steps) < 2:
+            raise BuildError(f"{where}: howtoName needs at least two howtoSteps")
+        for st in self.howto_steps:
+            if not st.get("name") or not st.get("text"):
+                raise BuildError(f"{where}: every howtoStep needs both `name` and `text`")
 
         if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", self.slug):
             raise BuildError(f"{where}: filename must be a lowercase-kebab slug")
@@ -426,10 +436,15 @@ def indent(block: str, spaces: int) -> str:
 def card(p: Post, heading: str, extra_class: str = "", excerpt: str | None = None,
          more: bool = False) -> str:
     cls = f"post-card {extra_class}".strip()
+    # The cover is a CONTENT image, not decoration: it is the only image on the
+    # card, and a screen reader landing on an alt="" image is told nothing about
+    # the post it belongs to. Prefer the author's coverAlt; fall back to the
+    # title, which is what the generated gradient card literally shows.
+    alt = attr(p.cover_alt or p.title)
     body = [
         f'<article class="{cls}">',
         '  <div class="post-card-media">',
-        f'    <img src="{p.card_image}" alt="" width="1200" height="630" loading="lazy">',
+        f'    <img src="{p.card_image}" alt="{alt}" width="1200" height="630" loading="lazy">',
         '  </div>',
         '  <div class="post-card-body">',
         f'    <p class="post-meta"><span class="tag">{p.tag}</span>'
@@ -469,6 +484,31 @@ def faq_jsonld(p: Post) -> str:
             {"@type": "Question", "name": e["question"],
              "acceptedAnswer": {"@type": "Answer", "text": e["answer"]}}
             for e in p.faq
+        ],
+    }
+    body = json.dumps(data, indent=2, ensure_ascii=False)
+    return ('\n  <script type="application/ld+json">\n'
+            + indent(body, 2) + "\n  </script>\n")
+
+
+def howto_jsonld(p: Post) -> str:
+    """Optional HowTo schema for a post that contains a genuine procedure.
+
+    Only emitted when the frontmatter carries a `howto:` block, because a
+    HowTo that does not match visible on-page steps is a structured-data
+    violation, not a bonus. The schema is validated in validate_references().
+    """
+    if not p.howto_name:
+        return ""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": p.howto_name,
+        "description": p.howto_description,
+        "step": [
+            {"@type": "HowToStep", "position": i + 1,
+             "name": st["name"], "text": st["text"]}
+            for i, st in enumerate(p.howto_steps)
         ],
     }
     body = json.dumps(data, indent=2, ensure_ascii=False)
@@ -516,6 +556,7 @@ def render_post(p: Post, posts: list[Post], template: str) -> str:
         "HERO": hero_html(p),
         "FAQ_HTML": faq_html(p),
         "FAQ_JSONLD": faq_jsonld(p),
+        "HOWTO_JSONLD": howto_jsonld(p),
         "RELATED": cards,
     }
     out = template

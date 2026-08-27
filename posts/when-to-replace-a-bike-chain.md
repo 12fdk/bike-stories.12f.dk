@@ -1,6 +1,7 @@
 ---
 title: "When to replace a bike chain (and what it costs if you don't)"
-description: "How chain wear actually works, how to measure it with a ruler or a gauge, and the distance figures worth planning around before it takes the cassette with it."
+metaTitle: "When to replace a bike chain | Bike Stories"
+description: "How chain wear works, how to measure it with a ruler or a gauge, and the mileage worth planning around — before a $40 part costs you a drivetrain."
 lede: "A chain is the cheapest part on your bike and the one that costs the most when you ignore it. Here is how to know when yours is done."
 excerpt: "Chain wear explained properly: how to measure it, the mileage worth planning around, and why a $40 part turns into a $250 bill."
 tag: parts-and-wear
@@ -15,8 +16,23 @@ summary: >
   cheapest maintenance decision on the bike. Includes what to do when you
   have already left it too late.
 coverAlt: "A bicycle drivetrain seen from the side, chain running over the cassette"
-hero: true
+# hero: false — the cover is the generated gradient card, which already carries
+# the title; showing it above the H1 would print the title twice (prompt.md §6).
+hero: false
 related: []
+# The two measurement procedures in the body, marked up so an answer engine can
+# lift the steps. Every step below matches visible on-page text (build.py §HowTo).
+howtoName: "How to measure bike chain wear"
+howtoDescription: "Check whether a bicycle chain has passed its replacement threshold, using either a drop-in chain checker or a steel ruler."
+howtoSteps:
+  - name: "Pick the threshold for your drivetrain"
+    text: "Use 0.5% wear for 11- and 12-speed drivetrains and 0.75% for 8-, 9- and 10-speed. If you are unsure which applies, use 0.5% — the cost of being early is one chain, the cost of being late is the whole cassette."
+  - name: "Measure with a chain checker"
+    text: "Put the pin at one end of the gauge into a roller and let the other end fall. If it drops fully into the chain at the 0.5 mark, the chain is at or past 0.5% wear. Measure in several places along the chain, because wear is rarely even and the worst section decides."
+  - name: "Or measure with a steel ruler"
+    text: "With the chain under mild tension, line the ruler's zero up with the centre of one pin and count twelve full links. Twelve inches exactly is new, 12 1/16 inches is 0.5% worn, and 12 1/8 inches is 0.75% worn. In metric, 304.8 mm is nominal and roughly 306.3 mm is 0.5%."
+  - name: "Replace the chain, then check the cassette"
+    text: "If the chain measured past 0.75% and was ridden that way for a while, fit the new chain and then put real force through the pedals in the smallest sprocket you use regularly. If it skips, the cassette has worn to match the old chain and needs replacing too."
 faq:
   - question: "How many kilometres does a bike chain last?"
     answer: "Anywhere from 2,000 to 5,000 km for most riders, and the spread is real rather than vague: a clean chain on a dry-road commuter bike, lubed regularly, can pass 5,000 km, while the same chain on a muddy winter cyclocross bike can be finished at 1,500. Grit is the variable that matters most, because chain wear is abrasion inside the pin and bushing, not fatigue. Measure rather than guess, and use your own recorded distance to learn what your conditions do."

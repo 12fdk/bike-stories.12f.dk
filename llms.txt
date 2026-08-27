@@ -49,4 +49,5 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 Practical bike maintenance and running-cost guidance, published at https://bike-stories.12f.dk/blog/ (RSS: https://bike-stories.12f.dk/feed.xml).
 
 - [What size bike a kid actually needs — inseam and standover, not age](https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/) — kids, 2026-08-27. A measurement-based guide to sizing a child's bike: a starting-point chart by age, height and inseam, how to take a child's inseam, how much standover clearance to look for, how high the saddle should be for a beginner versus a confident rider, and how to run the brake-reach check — including the lever reach-adjust screw to try before rejecting a bike.
+- [Why that tyre is so hard to mount — and how to seat it properly](https://bike-stories.12f.dk/blog/difficult-tyre-change/) — maintenance, 2026-08-27. Explains why a bicycle tyre is hard to put on at the final third: the bead is a circle and the rim is an oval, so the last centimetres of seat-down carry most of the tension.
 

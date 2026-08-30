@@ -6,8 +6,16 @@
     <description>Practical bike maintenance, what wears out when, and what a bike really costs — from the team behind Bike Stories.</description>
     <language>en</language>
     <atom:link href="https://bike-stories.12f.dk/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 27 Aug 2026 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 08:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>A child's first pedal bike: balance bike or stabilisers</title>
+      <link>https://bike-stories.12f.dk/blog/first-pedal-bike-balance-vs-stabilisers/</link>
+      <guid isPermaLink="true">https://bike-stories.12f.dk/blog/first-pedal-bike-balance-vs-stabilisers/</guid>
+      <pubDate>Sun, 30 Aug 2026 08:00:00 +0000</pubDate>
+      <category>kids</category>
+      <description>Balance bike first, pedals second. What each route teaches, when a child is ready for pedals, and the brake and setup checks before the first ride off.</description>
+    </item>
     <item>
       <title>What size bike a kid actually needs — inseam and standover, not age</title>
       <link>https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/</link>

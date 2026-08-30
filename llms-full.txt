@@ -48,6 +48,10 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
+### A child's first pedal bike: balance bike or stabilisers (2026-08-30, kids)
+https://bike-stories.12f.dk/blog/first-pedal-bike-balance-vs-stabilisers/
+A practical guide to getting a child onto their first pedal bike: what each of the three routes — balance bike first, training wheels, or straight to a full bike — actually teaches, why the balance-bike route keeps outperforming the other two, and when a child is ready for pedals. Covers the readiness sign, the first ride-off procedure with the saddle set low, the brake check that matters most on a child's bike, and a short pre-ride checklist.
+
 ### What size bike a kid actually needs — inseam and standover, not age (2026-08-27, kids)
 https://bike-stories.12f.dk/blog/what-size-bike-a-kid-actually-needs/
 A measurement-based guide to sizing a child's bike: a starting-point chart by age, height and inseam, how to take a child's inseam, how much standover clearance to look for, how high the saddle should be for a beginner versus a confident rider, and how to run the brake-reach check — including the lever reach-adjust screw to try before rejecting a bike. Explains why buying a frame to grow into is a safety problem rather than a preference, gives a worked example for a five-year-old, covers bike weight with the figures the market actually offers, and lists the signs a child has outgrown a bike. Notes where US rules on children's bikes differ from the rest of the world.

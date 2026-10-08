@@ -11,6 +11,22 @@ trust of someone standing over a bike with a question — some of whom will find
 Bike Stories because the article was worth reading, not because it sold them
 anything.
 
+**What this job is for.** The post exists to bring readers to the site by being
+worth reading — not to sell the app. Topics come from **real, demonstrated
+demand on Reddit**, never from what you imagine a rider worries about. The
+reader gets a complete, useful answer and decides for themselves whether Bike
+Stories is interesting; one honest mention is the entire commercial budget
+(§2). **A post that reads like an advert is a failed run even if it builds and
+pushes.**
+
+**Scratch files.** Every file you write to `/tmp` starts with `bike-`
+(`/tmp/bike-topics.log`, `/tmp/bike-build.log`). `/tmp` is shared by every cron
+job in the container, and a run that wrote the bare `/tmp/reddit-topics.log` had
+it overwritten mid-run by a sibling site's scrape — it would have published a
+post about the other site's topic, with no error anywhere. If a log you just
+wrote mentions subreddits or content that has nothing to do with bikes, it is
+another job's file: rerun with a `bike-` name, do not use it.
+
 ---
 
 ## 0. Who we are writing for (and why they'd ever want the app)
@@ -81,9 +97,13 @@ last year…"). Write from generally-known mechanical practice instead.
 ## 1. Topic selection — start from live demand
 
 ```
-python3 tools/reddit-topics.py          # ranked digest of what riders are asking
-python3 tools/reddit-topics.py --json
+python3 tools/reddit-topics.py > /tmp/bike-topics.log 2>&1; echo "exit $?"
+python3 tools/reddit-topics.py --json   # same data, machine-readable
 ```
+
+It takes a few minutes and prints progress the whole time — that is normal, let
+it run. Read the digest with `head`/`tail`, never the whole log. Exit code `2`
+means every feed failed: that is the "scrape failed" case below.
 
 **The three beats this blog is for**, in the order the demand sits: **DIY repair
 and servicing**, **when a part is genuinely worn out and has to be replaced**,
@@ -112,13 +132,20 @@ fine**. Fall back to the topic bank below.
    step 3.
 1. Run the tool. Redirect its output to a file and read the digest, not the raw
    dump.
-2. Pick a theme that is **(a)** genuinely being asked about, **(b)** not already
-   covered by a post in `posts/`, and **(c)** something you can answer usefully
-   without inventing facts.
+2. **Where step 0 has not already fixed the subject and the digest returns an
+   uncovered theme, you must take the topic from the digest** — the
+   highest-demand theme under UNCOVERED THEMES that is **(a)** genuinely being
+   asked about, **(b)** not already covered by a post in `posts/`, and **(c)**
+   something you can answer usefully without inventing facts. **The digest's
+   verbatim question titles are the brief**: write the post those people would
+   want, and open in their phrasing.
 3. Prefer the specific over the generic. "How often to service a mid-drive e-bike
    motor, and what the shop actually does" beats "Bike maintenance tips".
-4. If the scrape fails or every strong theme is covered, take the highest unused
-   entry from the bank.
+4. **The bank below is the fallback**, and only for: a scrape that failed (exit
+   `2`), a digest where every strong theme is already covered, and the kid
+   topics (entries 21–30) that the scrape cannot supply. Take the highest unused
+   entry. **Whenever you take a bank entry, say so in the report and mark it
+   `*(used: YYYY-MM-DD)*` in this file, in the same commit as the post.**
 
 **Why step 0 exists.** Measured on 2026-08-27: across r/cycling, r/MTB,
 r/bicycling and r/bikecommuting, month and year, 166 posts yielded 25 carrying a
@@ -130,8 +157,9 @@ would keep winning and the site would never publish one.
 
 ### Ranked topic bank (fallback, and a map of angles that fit the app)
 
-These fit the product without being about the product. Cross one off in your
-final report when you use it.
+These fit the product without being about the product. When you use one, mark
+it `*(used: YYYY-MM-DD)*` here in the same commit as the post, and name it in
+your final report.
 
 1. When to replace a bike chain (and what it costs if you don't)
 2. What a bike actually costs per kilometre, and how to work yours out
@@ -382,9 +410,9 @@ Rules the build enforces, so get them right the first time:
 
 ## 6. Images (ComfyUI, with a fallback)
 
-The cover and any inline photos are generated on the co-resident ComfyUI at
-`http://spark-72aa.tail7196c.ts.net:8188` with `comfy-gen` — the same tool the
-sister sites use. No compositing step: the photograph *is* the cover, and the
+The cover and any inline photos are generated on the co-resident ComfyUI with
+`comfy-gen` (it already knows the server address) — the same tool the sister
+sites use. No compositing step: the photograph *is* the cover, and the
 title is rendered by the page, not burned in.
 
 ```
@@ -413,8 +441,20 @@ and set `hero: false`:
 python3 tools/make-cover.py <slug> "<Title>" <tag>
 ```
 
+If ComfyUI hangs past a couple of minutes, stop waiting and use this fallback.
 Do not block the post on the image. A published post with a gradient card beats
 no post.
+
+**Then always optimise the cover**, whichever way you made it:
+
+```
+python3 tools/optimize-cover.py <slug>
+```
+
+It writes `images/blog/<slug>.webp`, which `build.py` serves in place of the
+PNG. The cover is the LCP element on the post page and ComfyUI returns a PNG:
+the first photograph shipped at **885 KB** because the WebP had never been
+generated. It converts to ~50 KB. Commit the `.webp` with the `.png`.
 
 ---
 
@@ -430,11 +470,13 @@ conversation; redirect it and read only a short tail, and only on failure.
    ```
 2. Fix anything it reports, then build for real:
    ```
-   python3 tools/build.py > /tmp/build.log 2>&1 && tail -3 /tmp/build.log || tail -30 /tmp/build.log
+   python3 tools/build.py > /tmp/bike-build.log 2>&1 && tail -3 /tmp/bike-build.log || tail -30 /tmp/bike-build.log
    ```
    It must print `BUILD OK`. The build regenerates the post page, the blog index,
    the homepage teaser, `feed.xml`, `sitemap.xml`, `llms.txt` and `llms-full.txt`
    — **never hand-edit those files**, your edits will be overwritten.
+   `BUILD OK` validates structure, never truth: run the review pass, including
+   **Site-specific review checks** below, before you commit.
 3. Commit only the post, its images and the regenerated files. Run `git status`
    first; delete any scratch files you created. Then stage deliberately:
    ```
@@ -449,6 +491,71 @@ conversation; redirect it and read only a short tail, and only on failure.
 Same discipline everywhere: pipe anything potentially verbose through a file or
 `tail`. Read files with `head`/`grep`, never dump a whole large file into
 context.
+
+---
+
+## Site-specific review checks
+
+These run in the review pass after `BUILD OK` and before `git commit`, on top of
+the generic checks. Re-read the post start to finish as a **hostile reader — a
+mechanic who has done the job** — not as its author. The build cannot read, so
+none of this is caught for you.
+
+1. **For every "replace it when…" you give, check the REASON is the real one.**
+   A wrong reason is worse than no reason: a reader who checks the wrong thing
+   gets a truthful "looks fine" and rides on a worn part. Say what the failure
+   mode actually is and what is being measured.
+2. **Check every number is a range with its variables named, not a
+   universal.** §3 is explicit: chain, pad and service life vary with
+   conditions, weight, drivetrain and whether it is an e-bike. A bare "every
+   3,000 km" with no conditions attached is a factual error in this blog.
+3. **Kids-bike posts: check you have not given one answer to two different
+   readers.** What is right for a 3-year-old on a balance bike is wrong for a
+   9-year-old on a geared 24", and "buy big, they'll grow into it" is a genuine
+   safety problem for a child who cannot reach the ground or the brake levers.
+   Tie every recommendation to a stated age/inseam/weight or split them. Where a
+   child's brake reach, bike weight or standover is the point, say so plainly.
+
+**Where the generic checks have already bitten this site** — the incidents
+behind them, so you know what they look like here:
+
+- *Parts and standards.* A part name you half-recognise is the single most
+  likely thing to be wrong, and a reader who wrenches spots it instantly and
+  stops trusting the whole post. If you cannot state what a component actually
+  does, cut it.
+- *Safety caveats live where the work is described*, not only in a closing
+  line — brakes, steering, forks, carbon, torque settings. If the honest answer
+  is "a shop or a torque wrench", write that.
+- *FAQ answers and `howtoSteps` read alone.* `howtoSteps` have no visible
+  counterpart at all, so *alone* is the only way they are ever read. A published
+  run shipped a step telling a parent to take up a brake cable with the "have a
+  shop do this" caveat left behind in the body, and an FAQ whose last line told
+  parents to reject a bike the body had just told them to adjust. Grep the body
+  for each step's key phrase: a step whose instruction appears nowhere on the
+  page misrepresents it.
+- *Headings.* A heading that promises a table of figures above a section with
+  none is the most common way these posts break their word.
+- *One number everywhere.* One published run had a single weight rule on the
+  page as "30–40%", "near or above 40%", "about a third" and "half the child's
+  weight". Pick the number, then grep the file for every other version of it.
+- *Direction of geometry and wear claims.* A run published "the standover gap
+  has gone" as a sign a child had outgrown a bike; the top tube does not move
+  and the child only gets taller, so the gap *grows*. Ask of any gap, clearance,
+  wear or tolerance: which way does this actually move?
+- *Local-only facts, charts included.* Thread standards, kids'-bike brake
+  regulations, helmet law, shop labour rates and second-hand markets all vary.
+  So do sizing charts: the inseam-to-wheel-size figures in circulation are a US
+  consensus, and European makers run lower and sell sizes the US charts skip.
+  When you cite a regulation, name the section and check what each figure is
+  measured under — a run cited two seat-height limits from 16 CFR 1512 without
+  noticing that one is measured with the seat at its highest and the other at
+  its lowest.
+- *Real app features only (§0).* A run credited Bike Stories with keeping "fit
+  notes"; there is no such feature, and the nearest real one is the reference
+  setup sheet.
+- *Nudge budget (§2).* One Bike Stories mention in the body, two at the very
+  most, and never in the closing position, where it works as the call to action
+  §2 bans.
 
 ---
 
@@ -470,6 +577,8 @@ Report concisely:
   work is safety-critical.
 - Confirmation that the post describes the pricing correctly and does not claim
   the app does no tracking (§0).
+- What the review pass changed. "Nothing" is a legitimate answer only if you can
+  name what you checked.
 - Anything worth a human glance — e.g. "the topic bank is running low", "Reddit
   was blocked two runs in a row", "ComfyUI has been down for three runs".
 

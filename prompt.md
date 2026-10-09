@@ -155,7 +155,28 @@ fixing their own bikes. So kid-bike demand is real (it is one of the three beats
 but essentially invisible to this tool, and without a rotation rule the digest
 would keep winning and the site would never publish one.
 
+### Comparison posts (at least one in three)
+
+The posts that earn real search traffic are the comparison posts, the ones
+phrased in the reader's own search words. **At least one post in three should
+be a comparison post**, in one of two shapes:
+
+- **"<app> vs <competitor>"**, or
+- **"best <category> apps (<year>)"** (or the site's own phrasing of the same
+  idea, e.g. "best <category> for <use>").
+
+When you write one, **name the real competitors that actually rank for the
+category and be fair and accurate about them** — state what each genuinely does
+and what it costs, and do not invent features or prices for them. Real
+competitors that rank for this site's category: ProBikeGarage, Fettle, BicycleCareLog and a spreadsheet — the bike maintenance-log and servicing apps riders already search for. 
+Keep our app's in-body mention inside the §2 nudge budget: the comparison is
+carried by naming the competitors, not by repeating our name. A comparison post
+must still be complete and honest on its own — remove our app and it should read
+as a fair, useful ranking of the others. Note in the report when you wrote one,
+so the one-in-three cadence stays easy to audit.
+
 ### Ranked topic bank (fallback, and a map of angles that fit the app)
+
 
 These fit the product without being about the product. When you use one, mark
 it `*(used: YYYY-MM-DD)*` here in the same commit as the post, and name it in

@@ -602,6 +602,11 @@ Report concisely:
   as a **traffic line** (0 in the first hours is normal — real traffic and
   indexing take time; never fail or retry a publish because of it, the
   publish proof is the deploy + the HTTP 200).
+- Search line: `python3 /opt/data/profiles/blogger/scripts/gsc.py page-views
+  https://bike-stories.12f.dk/ /blog/<slug>/ 14` and report its output (e.g.
+  `GSC_SEARCH 12 impressions, 2 clicks, position 5.3`). Google indexes new posts
+  over days, so `0 impressions … no position yet` is normal for a fresh post —
+  never fail a publish on it; the publish proof is the deploy + the HTTP 200.
 - Confirmation that the post describes the pricing correctly and does not claim
   the app does no tracking (§0).
 - What the review pass changed. "Nothing" is a legitimate answer only if you can

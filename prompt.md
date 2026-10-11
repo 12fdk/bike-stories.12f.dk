@@ -596,6 +596,12 @@ Report concisely:
   universal, no unverified manufacturer spec, no invented statistics, no named
   shop's prices, no unverified external URLs, and a safety caveat wherever the
   work is safety-critical.
+- Traffic check: after the deploy is green, run
+  `python3 /opt/data/profiles/blogger/scripts/umami_post_views.py
+  851074a3-d8a2-4c1d-929a-138eea1f9161 /blog/<slug>/ 12` and report the number
+  as a **traffic line** (0 in the first hours is normal — real traffic and
+  indexing take time; never fail or retry a publish because of it, the
+  publish proof is the deploy + the HTTP 200).
 - Confirmation that the post describes the pricing correctly and does not claim
   the app does no tracking (§0).
 - What the review pass changed. "Nothing" is a legitimate answer only if you can

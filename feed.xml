@@ -6,8 +6,16 @@
     <description>Practical bike maintenance, what wears out when, and what a bike really costs — from the team behind Bike Stories.</description>
     <language>en</language>
     <atom:link href="https://bike-stories.12f.dk/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 11 Oct 2026 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 08:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Winter riding: what salt and grit destroy first on your bike</title>
+      <link>https://bike-stories.12f.dk/blog/winter-riding-salt-grit-what-wears-first/</link>
+      <guid isPermaLink="true">https://bike-stories.12f.dk/blog/winter-riding-salt-grit-what-wears-first/</guid>
+      <pubDate>Sun, 18 Oct 2026 08:00:00 +0000</pubDate>
+      <category>riding</category>
+      <description>Winter riding is not that bad for you — it is for a short list of consumables. What salt and grit destroy first, and the habits that slow it down.</description>
+    </item>
     <item>
       <title>When to replace a cassette and chainring, and when they go as a set</title>
       <link>https://bike-stories.12f.dk/blog/when-to-replace-cassette-chainring-set/</link>

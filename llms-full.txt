@@ -48,6 +48,10 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
+### Winter riding: what salt and grit destroy first on your bike (2026-10-18, riding)
+https://bike-stories.12f.dk/blog/winter-riding-salt-grit-what-wears-first/
+A seasonal maintenance guide for riders who commute or ride through salted, gritted winter roads. It explains the two different mechanisms of winter wear — salt water as a corrosive electrolyte and grit as an abrasive — the order in which parts meet the winter wear (drivetrain, brake pads, inner cables, bearings, fasteners, then cosmetics), how to check each part and what the real failure mode is, and the cheap habits that slow the season down: mudguards, a low-pressure rinse, drying and relubing the chain, greasing the seatpost and bolts, and storing the bike dry. It answers whether a separate winter bike is worth keeping, and what indoor winter riding does to a bike through sweat.
+
 ### When to replace a cassette and chainring, and when they go as a set (2026-10-11, parts-and-wear)
 https://bike-stories.12f.dk/blog/when-to-replace-cassette-chainring-set/
 A practical guide to replacing the rear cassette and the chainring, written for the rider whose chain catches or skips, often on backpedal, and who is unsure what to replace. It explains how the drivetrain wears as a set with the chain failing first, why a new chain on a worn cassette or chainring skips and catches instead of fixing the problem, how to measure chain elongation against the 0.5 and 0.75 percent limits, how to read the teeth for the hooked profile that means a cog or ring is done, and how to decide between replacing the chain alone and replacing the drivetrain as a set.

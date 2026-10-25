@@ -204,7 +204,7 @@ your final report.
 20. Storing a bike over winter without paying for it in spring
 21. What size bike a kid actually needs — inseam and standover, not age *(used: 2026-08-27)*
 22. A child's first pedal bike: balance bike, stabilisers, or straight to pedals *(used: 2026-08-30)*
-23. Kids' bikes: the five things worth paying for, and the ones that don't matter
+23. Kids' bikes: the five things worth paying for, and the ones that don't matter *(used: 2026-10-25)*
 24. Bike weight and a child: why a 12 kg bike is too heavy for a 5-year-old
 25. Brake reach on a kid's bike, and the check that takes ten seconds
 26. Handing a bike down: what to service before the next child rides it

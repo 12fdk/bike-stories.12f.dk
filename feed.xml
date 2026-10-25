@@ -6,8 +6,16 @@
     <description>Practical bike maintenance, what wears out when, and what a bike really costs — from the team behind Bike Stories.</description>
     <language>en</language>
     <atom:link href="https://bike-stories.12f.dk/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 18 Oct 2026 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 08:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Kids' bikes: five things worth paying for</title>
+      <link>https://bike-stories.12f.dk/blog/kids-bikes-five-things-worth-paying-for/</link>
+      <guid isPermaLink="true">https://bike-stories.12f.dk/blog/kids-bikes-five-things-worth-paying-for/</guid>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0000</pubDate>
+      <category>kids</category>
+      <description>Which features on a kids' bike are worth the money — weight, brakes, fit, tyres, gearing — how to check each in the shop, and the ones that don't matter.</description>
+    </item>
     <item>
       <title>Winter riding: what salt and grit destroy first on your bike</title>
       <link>https://bike-stories.12f.dk/blog/winter-riding-salt-grit-what-wears-first/</link>

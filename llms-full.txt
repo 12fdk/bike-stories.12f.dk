@@ -48,6 +48,10 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
+### Kids' bikes: five things worth paying for (2026-10-25, kids)
+https://bike-stories.12f.dk/blog/kids-bikes-five-things-worth-paying-for/
+A buying guide for parents choosing a child's bike, built around which shop features are worth the money. It gives five checkable properties — the bike's weight as a fraction of the child's body weight, brakes a small hand can reach and operate, a frame sized for the child today with growing room in the seatpost and stem, tyres matched to the surfaces the child rides, and a drivetrain that shifts cleanly through its range — with a shop check for each. It lists the features that don't matter (extra gearing, suspension, brand graphics, bundled accessories, age-based size charts) and why each is easy to be sold on, and splits the advice between a young child on a 12- to 16-inch bike and an older child on a 20- or 24-inch bike.
+
 ### Winter riding: what salt and grit destroy first on your bike (2026-10-18, riding)
 https://bike-stories.12f.dk/blog/winter-riding-salt-grit-what-wears-first/
 A seasonal maintenance guide for riders who commute or ride through salted, gritted winter roads. It explains the two different mechanisms of winter wear — salt water as a corrosive electrolyte and grit as an abrasive — the order in which parts meet the winter wear (drivetrain, brake pads, inner cables, bearings, fasteners, then cosmetics), how to check each part and what the real failure mode is, and the cheap habits that slow the season down: mudguards, a low-pressure rinse, drying and relubing the chain, greasing the seatpost and bolts, and storing the bike dry. It answers whether a separate winter bike is worth keeping, and what indoor winter riding does to a bike through sweat.

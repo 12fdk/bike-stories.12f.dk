@@ -48,6 +48,10 @@ Bike Stories is an iPhone app that keeps the whole story of every bike you own. 
 
 The Bike Stories blog publishes practical bicycle maintenance guidance — what wears out and when, how to keep a service history, and what a bike really costs to run — at https://bike-stories.12f.dk/blog/ (RSS feed: https://bike-stories.12f.dk/feed.xml). Posts are tagged `maintenance`, `parts-and-wear`, `costs`, `riding` or `kids`.
 
+### Is a 12 kg (26 lb) bike too heavy for a 5-year-old? (2026-11-01, kids)
+https://bike-stories.12f.dk/blog/how-heavy-should-a-kids-bike-be/
+An answer to how heavy a children's bike should be, built around the bike's weight as a share of the child's body weight. It works through the 30-40% figure with a 12 kg (26 lb) example bike against several child weights, flips the calculation to show how heavy a child each bike actually needs, explains why most mainstream bikes come in above the range for a small child, lists the causes of a heavy bike and what a lighter one costs, gives a bathroom-scale method for weighing a bike and a child, and offers handling tests and the parts that can legitimately come off. It splits the advice across a 3-year-old on a balance bike, a 5-year-old on a 16-inch bike and a 9-year-old on a geared 24-inch bike.
+
 ### Kids' bikes: five things worth paying for (2026-10-25, kids)
 https://bike-stories.12f.dk/blog/kids-bikes-five-things-worth-paying-for/
 A buying guide for parents choosing a child's bike, built around which shop features are worth the money. It gives five checkable properties — the bike's weight as a fraction of the child's body weight, brakes a small hand can reach and operate, a frame sized for the child today with growing room in the seatpost and stem, tyres matched to the surfaces the child rides, and a drivetrain that shifts cleanly through its range — with a shop check for each. It lists the features that don't matter (extra gearing, suspension, brand graphics, bundled accessories, age-based size charts) and why each is easy to be sold on, and splits the advice between a young child on a 12- to 16-inch bike and an older child on a 20- or 24-inch bike.

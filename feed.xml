@@ -6,8 +6,16 @@
     <description>Practical bike maintenance, what wears out when, and what a bike really costs — from the team behind Bike Stories.</description>
     <language>en</language>
     <atom:link href="https://bike-stories.12f.dk/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 01 Nov 2026 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 08:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Bike tools worth owning, and what each one saves you</title>
+      <link>https://bike-stories.12f.dk/blog/bike-tools-worth-owning/</link>
+      <guid isPermaLink="true">https://bike-stories.12f.dk/blog/bike-tools-worth-owning/</guid>
+      <pubDate>Sun, 08 Nov 2026 08:00:00 +0000</pubDate>
+      <category>maintenance</category>
+      <description>Which bike tools are worth owning, ranked by the shop visit or the part each one saves you, and the tools that are just convenience.</description>
+    </item>
     <item>
       <title>Is a 12 kg (26 lb) bike too heavy for a 5-year-old?</title>
       <link>https://bike-stories.12f.dk/blog/how-heavy-should-a-kids-bike-be/</link>
